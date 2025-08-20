@@ -1,12 +1,12 @@
 {
   "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
+    "name": "Alejandro Maldonado Medina",
+    "label": "Geofísico | Cientifico de Datos",
     "image": "",
-    "email": "albert@einstein.de",
-    "phone": "(912) 123-4567",
-    "url": "https://alshedivat.github.io/al-folio/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "email": "alejamm28@gmail.com",
+    "phone": "000",
+    "LinkedIn": "https://www.linkedin.com/in/alejandro-maldonado-medina/",
+    "summary": "Soy egresado de la Licenciatura en Geociencias con área de profundización en geofísica aplicada por la ENES Morelia, UNAM. He participado en proyectos de exploración geofísica y actualmente me desempeño también como científico de datos, aplicando herramientas como Python, pandas, NumPy, scikit-learn, QGIS, SQL y técnicas de machine learning para el análisis espacial, modelado predictivo y visualización de datos.",
     "location": {
       "address": "2712 Broadway St",
       "postalCode": "CA 94115",
