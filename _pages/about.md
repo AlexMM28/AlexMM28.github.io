@@ -2,7 +2,7 @@
 layout: about
 title: "Sobre mí"
 permalink: /
-subtitle: "Geofíscia · Geociencias · Ciencia de Datos"
+subtitle: "Geofísica · Geociencias · Ciencia de Datos"
 
 profile:
   align: right
