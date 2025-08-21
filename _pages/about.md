@@ -7,25 +7,21 @@ subtitle: "Geofíscia · Geociencias · Ciencia de Datos"
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: true
+  image_circular: false 
   more_info: >
     <p>Morelia, Michoacán, México</p>
 
-selected_papers: true
+selected_papers: false
 social: true
 
 announcements:
-  enabled: true
-  scrollable: true
-  limit: 5
+  enabled: false
 
 latest_posts:
-  enabled: true
-  scrollable: true
-  limit: 3
+  enabled: false
 ---
 
-# ¡Hola! 👋  
+# ¡Hola! 
 
 Bienvenidos a mi página web. Mi nombre es **Alejandro Maldonado Medina** y soy egresado de la **Licenciatura en Geociencias con área de profundización en Geofísica Aplicada** por la **ENES Morelia, UNAM**.  
 
