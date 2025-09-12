@@ -8,11 +8,12 @@
   },
   "education": [
     {
-      "institution": "ENES Morelia, UNAM",
-      "area": "Geociencias",
+      "institution": "Escuela Nacional de Estudios Superiores Unidad Morelia, UNAM",
+      "Location": "Morelia, Michoacán, México",
+      "area": "Licenciatura en Geociencias con área de profundización en Geofísica Aplicada",
       "studyType": "Licenciatura",
-      "endDate": "2023-01-01",
-      "summary": "Licenciatura en Geoeciencias con área de profundización en Geofísica Aplicada."
+      "startDate": "Agosto 2019",
+      "endDate": "Junio 2023"
     }
   ],
   "volunteer": [
@@ -28,7 +29,7 @@
       "organization": "Segundo Encuentro de Estudiantes de Geociencias",
       "location": "Morelia, Michoacán",
       "position": "Expositor",
-      "startDate": "2023-05-01",
+      "date": "2023-05-01",
       "summary": "Presentador de póster científico 'Análisis del comportamiento térmico del subsuelo en el campo geotérmico de Los Azufres, Michoacán mediante registros sísmicos y geofísicos de pozos.'"
     }
   ],
@@ -101,11 +102,13 @@
   "projects": [
     {
       "name": "Tomografía de resistividad eléctrica 3D en el Palacio de Minería, Ciudad de México",
-      "description": "Generación de un modelo 3D con base a la TRE en el patio central del Palacio de Minería, para analizar y caracterizar las anomalías estructurales y geológicas del edificio."
+      "summary": "Generación de un modelo 3D con base a la TRE en el patio central del Palacio de Minería, para analizar y caracterizar las anomalías estructurales y geológicas del edificio.",
+      "highlights": ["TRE 3D", "Palacio de Minería", "Subsidencia"]
     },
     {
       "name": "Mapa interactivo de la Geotermia en México (Servicio Social)",
-      "description": "Creación de base de datos de características químicas y físicas de acuíferos y un mapa interactivo de las provincias geotérmicas de México.",
+      "summary": "Creación de base de datos de características químicas y físicas de acuíferos y un mapa interactivo de las provincias geotérmicas de México.",
+      "highlights": ["Geotermía", "Geoquímica", "Manifestaciones termales"],
       "url": "http://geotermia.geofisica.unam.mx/"
     }
   ],
