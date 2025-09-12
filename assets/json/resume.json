@@ -35,38 +35,44 @@
   "certificates": [
     {
       "name": "Análisis de Datos Sísmicos Nivel Básico",
-      "date": "2023-01-01",
+      "date": "Enero 2023",
       "issuer": "Instituto de Geofísica UNAM",
-      "url": "https://sigeco.cuaieed.unam.mx/valida.php"
+      "url": "https://sigeco.cuaieed.unam.mx/valida.php",
+      "icon": "fa-solid fa-globe"
     },
     {
       "name": "Análisis de Datos Sísmicos Nivel Avanzado",
-      "date": "2023-01-01",
+      "date": "Enero 2023",
       "issuer": "Instituto de Geofísica UNAM",
-      "url": "https://sigeco.cuaieed.unam.mx/valida.php"
+      "url": "https://sigeco.cuaieed.unam.mx/valida.php",
+      "icon": "fa-solid fa-globe"
     },
     {
       "name": "Analyze Data with Python Skill Path",
-      "date": "2025-04-01",
+      "date": "Abril 2025",
       "issuer": "Codecademy",
-      "url": "https://www.codecademy.com/profiles/alejamm28/certificates/a91cf883da2f48e2b977577646801c81"
+      "url": "https://www.codecademy.com/profiles/alejamm28/certificates/a91cf883da2f48e2b977577646801c81",
+      "icon": "fa-brands fa-python"
     },
     {
       "name": "How to Clean Data with Python",
-      "date": "2025-05-01",
+      "date": "Mayo 2025",
       "issuer": "Codecademy",
-      "url": "https://www.codecademy.com/profiles/alejamm28/certificates/e773a003314c1be60da8388a90a77e78"
+      "url": "https://www.codecademy.com/profiles/alejamm28/certificates/e773a003314c1be60da8388a90a77e78",
+      "icon": "fa-brands fa-python"
     },
     {
       "name": "Data Science Foundations",
-      "date": "2025-05-01",
+      "date": "Mayo 2025",
       "issuer": "Codecademy",
-      "url": "https://www.codecademy.com/profiles/alejamm28/certificates/738a7262ff2b4a49b062c25482dc2549"
+      "url": "https://www.codecademy.com/profiles/alejamm28/certificates/738a7262ff2b4a49b062c25482dc2549",
+      "icon": "fa-brands fa-python"
     }
   ],
   "skills": [
     {
       "name": "Geofísica",
+      "icon": "fa-regular fa-circle",
       "keywords": [
         "Procesamiento de datos geofísicos",
         "Tomografía de resistividad eléctrica",
@@ -78,6 +84,7 @@
     },
     {
       "name": "Programación",
+      "icon": "fa-regular fa-circle",
       "keywords": [
         "Python",
         "pandas",
