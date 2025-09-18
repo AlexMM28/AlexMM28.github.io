@@ -1,13 +1,18 @@
 ---
 layout: page
 title: Portafolio
-permalink: /projects/
-description: A growing collection of your cool projects.
+permalink: /portafolio/
+description: Proyectos acádemicos y personales
 nav: true
 nav_order: 3
-display_categories: [work, fun]
+display_categories: [Geofísica, Ciencia de Datos]
 horizontal: false
 ---
+<div style="text-align: center;">
+  <h1>{{ page.title }}</h1>
+  <p>{{ page.description }}</p>
+</div>
+
 
 <!-- pages/projects.md -->
 <div class="projects">
