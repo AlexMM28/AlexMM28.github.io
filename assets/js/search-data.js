@@ -18,10 +18,10 @@ ninja.data = [{
           },
         },{id: "nav-portafolio",
           title: "Portafolio",
-          description: "A growing collection of your cool projects.",
+          description: "Proyectos acádemicos y personales",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/projects/";
+            window.location.href = "/portafolio/";
           },
         },{id: "nav-cv",
           title: "CV",
