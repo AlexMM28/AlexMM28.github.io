@@ -449,9 +449,9 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
-            },},{id: "projects-tomografía-de-resistividad-electrica-en-el-palacio-de-minería-ciudad-de-méxico",
-          title: 'Tomografía de Resistividad Electrica en el Palacio de Minería, Ciudad de México.',
-          description: "Modelo tridimensional del subsuelo del patio central del Palacio de Minería.",
+            },},{id: "projects-tomografía-de-resistividad-eléctrica-en-el-palacio-de-minería-ciudad-de-méxico",
+          title: 'Tomografía de Resistividad Eléctrica en el Palacio de Minería, Ciudad de México.',
+          description: "Sin contexto aún",
           section: "Projects",handler: () => {
               window.location.href = "/projects/TRE3D_PM/";
             },},{
