@@ -2,7 +2,7 @@
 layout: page
 title: Tomografía de Resistividad Electrica en el Palacio de Minería, Ciudad de México.
 description: Modelo tridimensional del subsuelo del patio central del Palacio de Minería.
-img: assets\img\7.jpg
+img: assets\img\12.jpg
 importance: 1
 category: Geofísica
 related_publications: true
