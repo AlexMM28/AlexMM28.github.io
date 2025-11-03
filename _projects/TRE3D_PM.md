@@ -1,81 +1,50 @@
 ---
 layout: page
 title: Tomografía de Resistividad Eléctrica en el Palacio de Minería, Ciudad de México.
-description: Sin contexto aún
+description: Estudio geofísico con Tomografía de Resistividad Eléctrica 3D para la caracterización del subsuelo y cimientos del patio central del Palacio de Minería.
 img: /assets/img/PM01.jpg
 importance: 1
 category: Geofísica
 related_publications: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+## Resumen
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+<div class="text-justify">
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+El **Palacio de Minería**, construido a finales del siglo XVIII y ubicado en el **Centro Histórico de la Ciudad de México**, es un edificio de gran valor histórico y arquitectónico que actualmente presenta **hundimientos diferenciales** que comprometen su estabilidad estructural.  
+Dada su relevancia patrimonial, se requieren **métodos no invasivos** para investigar las causas de estos asentamientos.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
+En el presente trabajo se realizó una **Tomografía de Resistividad Eléctrica (TRE) 3D** en el patio central del edificio, utilizando una configuración **Roll-Along lateral** con tres secuencias de medición: **Wenner-Schlumberger**, **Ecuatorial** y **Mínimo Acoplamiento**.  
+
+Los resultados revelan tres **unidades geoeléctricas** principales:
+
+- **Unidad I (baja resistividad, <10 Ω·m):** asociada a materiales arcillosos saturados o acumulaciones de agua libre.  
+- **Unidad II (resistividad media, 10–100 Ω·m):** interpretada como materiales arcillosos parcialmente saturados, rellenos constructivos húmedos o mezclas heterogéneas con contenido variable de humedad.  
+- **Unidad III (alta resistividad, >100 Ω·m):** relacionada con cuerpos someros de materiales como baldosas, losas o rellenos constructivos secos.
+
+Estos resultados sugieren que el **hundimiento del Palacio de Minería** está directamente relacionado con la **saturación de los materiales de relleno** y la **compresibilidad de la capa arcillosa** bajo la cimentación, lo que explica los **asentamientos diferenciales** observados en distintas zonas del edificio.
+
 </div>
 
-You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
-Say you wanted to write a bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+<hr>
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
+## Abstract
+
+<div class="text-justify">
+
+The **Palacio de Minería**, built in the late 18th century and located in the **Historic Center of Mexico City**, is a building of great historical and architectural value that currently exhibits **differential settlements** compromising its structural stability.  
+Given its patrimonial importance, **non-invasive geophysical methods** are required to investigate the causes of these deformations.
+
+In this study, a **3D Electrical Resistivity Tomography (ERT)** survey was conducted in the central courtyard of the building, using a **lateral Roll-Along configuration** with three measurement sequences: **Wenner-Schlumberger**, **Equatorial**, and **Minimum Coupling** arrays.  
+
+The results reveal three main **geo-electrical units**:
+
+- **Unit I (low resistivity, <10 Ω·m):** associated with water-saturated clayey materials or possible accumulations of free water.  
+- **Unit II (medium resistivity, 10–100 Ω·m):** interpreted as partially saturated clays, humid construction fills, or heterogeneous mixtures with variable moisture content.  
+- **Unit III (high resistivity, >100 Ω·m):** related to shallow layers of materials such as tiles, slabs, or dry construction fills.
+
+These results suggest that the **differential settlement of the Palacio de Minería** is mainly associated with the **saturation of fill materials** and the **compressibility of the underlying clay layer**, explaining the non-uniform subsidence observed in different areas of the building.
+
 </div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
-
-{% endraw %}
