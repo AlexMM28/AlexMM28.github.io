@@ -46,8 +46,6 @@ These results suggest that the **differential settlement of the Palacio de Miner
 
 <hr>
 
-<hr>
-
 ## Introducción
 
 <div class="text-justify" markdown="1">
@@ -67,12 +65,14 @@ La Tomografía de Resistividad Eléctrica en 3D (TRE-3D) es una técnica de pros
 El **Palacio de Minería** se localiza en el Centro Histórico de la Ciudad de México, aproximadamente en las coordenadas **19°26.15’ N** y **99°8.37’ O**, con dirección en **C. de Tacuba 5, Cuauhtémoc, Ciudad de México**.
 </div>
 
-<p style="text-align: center;">
-  <figure>
-    <img src="\assets\img\PM_ubicacion.png" alt="Ubicación del Palacio de Minería" style="max-width: 80%; border-radius: 8px;">
-    <figcaption><em>Figura 1. Ubicación del Palacio de Minería en el Centro Histórico de la Ciudad de México.</em></figcaption>
-  </figure>
-</p>
+<div class="row">
+  <div class="col-sm mt-3 mt-md-4">
+    {% include figure.liquid loading="lazy" path="\assets\img\PM_ubicacion.png" title="Ubicación del Palacio de Minería en la Ciudad de México" class="img-fluid rounded z-depth-1" %}
+  </div>
+</div>
+<div class="caption text-center">
+  <em>Figura 1. Ubicación del Palacio de Minería en el Centro Histórico de la Ciudad de México.</em>
+</div>
 
 
 
