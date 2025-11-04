@@ -67,7 +67,7 @@ El **Palacio de Minería** se localiza en el Centro Histórico de la Ciudad de M
 
 <div class="row">
   <div class="col-sm mt-3 mt-md-4">
-    {% include figure.liquid loading="lazy" path="\assets\img\PM_ubicacion.png" title="Ubicación del Palacio de Minería en la Ciudad de México" class="img-fluid rounded z-depth-1" %}
+    {% include figure.liquid loading="lazy" path="\assets\img\PM_ubicacion.jpg" title="Ubicación del Palacio de Minería en la Ciudad de México" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
 <div class="caption text-center">
