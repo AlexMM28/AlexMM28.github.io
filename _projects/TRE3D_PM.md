@@ -44,5 +44,35 @@ These results suggest that the **differential settlement of the Palacio de Miner
 
 </div>
 
+<hr>
+
+<hr>
+
+## Introducción
+
+<div class="text-justify" markdown="1">
+
+Los métodos de exploración geofísica han sido herramientas fundamentales en la investigación del subsuelo, permitiendo la caracterización de estructuras geológicas, la detección de anomalías y la identificación de materiales de distinta composición sin necesidad de excavaciones invasivas. En el contexto de zonas arqueológicas y edificaciones históricas, la geofísica aplicada se ha convertido en una técnica esencial para la preservación del patrimonio, debido a que permite estudiar las condiciones estructurales y evaluar riesgos sin comprometer la integridad de los sitios analizados. El uso de métodos geofísicos en contextos arqueológicos y arquitectónicos ofrece diversas ventajas, tales como la rapidez en la adquisición de datos, la posibilidad de estudiar grandes áreas sin afectar la estructura de los edificios y la capacidad de obtener modelos tridimensionales que facilitan la interpretación de las condiciones del subsuelo.
+
+La Tomografía de Resistividad Eléctrica en 3D (TRE-3D) es una técnica de prospección ampliamente utilizada para explorar el subsuelo con objetivos geotécnicos, arqueológicos y de recursos naturales, entre otros (*Chávez et al., 2015; Argote-Espino et al., 2013*). Este método permite visualizar las variaciones laterales y verticales de las propiedades eléctricas del subsuelo a partir de su oposición al flujo de corriente eléctrica, proporcionando modelos volumétricos que revelan estructuras enterradas sin alterar o destruir el contexto histórico. Su aplicación ha demostrado ser especialmente útil en zonas urbanas e históricas debido a su capacidad para identificar rasgos arquitectónicos enterrados, cavidades, rellenos, interfaces estratigráficas y materiales asociados a procesos constructivos (*Paz-Arellano et al., 2017*).
+
+</div>
+
+<hr>
+
+## Zona de estudio 
+
+<div class="text-justify" markdown="1">
+
+El **Palacio de Minería** se localiza en el Centro Histórico de la Ciudad de México, aproximadamente en las coordenadas **19°26.15’ N** y **99°8.37’ O**, con dirección en **C. de Tacuba 5, Cuauhtémoc, Ciudad de México**.
+</div>
+
+<p style="text-align: center;">
+  <figure>
+    <img src="\assets\img\PM_ubicacion.png" alt="Ubicación del Palacio de Minería" style="max-width: 80%; border-radius: 8px;">
+    <figcaption><em>Figura 1. Ubicación del Palacio de Minería en el Centro Histórico de la Ciudad de México.</em></figcaption>
+  </figure>
+</p>
+
 
 
