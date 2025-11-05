@@ -89,8 +89,26 @@ El proyecto fue solicitado por la Real Academia de San Carlos de la Nueva Españ
 De acuerdo con (*Rodríguez, 2016*) Hoy en día el Palacio de Minería no se puede considerar como una edificación del arquitecto Manuel Tolsá, debido a que el edificio ha tenido dos grandes intervenciones constructivas en su historia: 
 1. Antonio Villard Oleá de 1830 a 1842
 2. Sociedad de Ex Alumnos de la Facultad de Ingeniería (SEFI) de 1970 a 1976.
+</div>
+
+
+<div class="row justify-content-center">
+  <div class="col-sm-6 mt-3 mt-md-4">
+    {% include figure.liquid 
+      loading="lazy" 
+      path="assets/img/Manuel_tolsa.jpg" 
+      title="Manuel Tolsá" 
+      class="img-fluid rounded z-depth-1" 
+    %}
+  </div>
+</div>
+<div class="caption text-center">
+    Figura 2. Retrato de Manuel Tolsá.
+</div>
+
 
 ### Etapa Antonio Villard 1830 - 1842
+<div class="text-justify" markdown="1">
 
 Al termino de la construcción del Real Seminario de Minería, hoy en día conocido como el Palacio de minería; se menciono que el edifico apenas concluido su construcción ya presentaba deterioros constructivos, por ejemplo, grietas en las paredes; además que el año de 1813 ya se había hundido más de 60 cm (*Escamilla, 2011*).
 
@@ -99,8 +117,24 @@ El encargado para evitar el derrumbe del edificio fue el arquitecto francés Ant
 Las principales modificaciones de Antonio de Villar Olea fueron: 
 - Agregar contrafuertes en el ala sur, para contrarrestar el hundimiento de la parte central (*Escamilla, 2011*).
 - Elevación del nivel de piso del patio central (*Guzmán y Rodríguez 2013a: 232-313*)
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-sm-6 mt-3 mt-md-4">
+    {% include figure.liquid 
+      loading="lazy" 
+      path="assets/img/Palacio_de_mineria.jpg" 
+      title="Manuel Tolsá" 
+      class="img-fluid rounded z-depth-1" 
+    %}
+  </div>
+</div>
+<div class="caption text-center">
+    Figura 2. Imagen del Colegio de Minería en el siglo XIX. Hoy en día el Palacio de Minería. 
+</div>
 
 ### Etapa de la Sociedad de Ex alumnos de la Facultad de Ingeniería 1965 - 1975.
+<div class="text-justify" markdown="1">
 
 El Palacio de Minería siguió en deterioro; entre los años de 1940 a 1960 continuaron las pequeñas obras preventivas en el mismo (*Rodríguez,  2016*). Para el año de 1964 la Sociedad de Ex Alumnos de la Facultad de Ingeniería se dio cuenta de las malas condiciones en que se encontraba el Palacio de Minería y se planteo su restauración (*Palacio de Minería, s.f*).
 
@@ -110,5 +144,20 @@ De acuerdo con la página web del [Palacio de Minería](https://www.palaciominer
 1. Reestauración total del edifico para su absoluta seguridad.
 2. Reestauración del edificio conservando el estilo arquitectonico de Manuel Tolsá.
 3. Reacondicionamiento del edifico para aprovechar los espacios de acuerdo con el plan de trabajo de la Facultad de Ingeniería.
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-sm-6 mt-3 mt-md-4">
+    {% include figure.liquid 
+      loading="lazy" 
+      path="assets/img/SEFI.jpg" 
+      title="Manuel Tolsá" 
+      class="img-fluid rounded z-depth-1" 
+    %}
+  </div>
+</div>
+<div class="caption text-center">
+    Figura 2. Logo de la Sociedad de Ex alumnos de la Facultad de Ingeniería (SEFI).
+</div>
 
 
