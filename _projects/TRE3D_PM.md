@@ -67,11 +67,11 @@ El **Palacio de Minería** se localiza en el Centro Histórico de la Ciudad de M
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets\img\PM_ubicacion.jpg" title="Ubicacion Palacio de Mineria" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Figura 1. Ubicación del Palacio de Minería en el Centro Histórico de la Ciudad de México.
+    This image can also have a caption. It's like magic.
 </div>
 
 
