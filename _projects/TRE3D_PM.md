@@ -74,4 +74,41 @@ El **Palacio de Minería** se localiza en el Centro Histórico de la Ciudad de M
     Figura 1. Ubicación del Palacio de Minería en el Centro Histórico de la Ciudad de México.
 </div>
 
+<hr>
+
+## Antecedentes históricos del Palacio de Minería
+
+<div class="text-justify" markdown="1">
+
+El Palacio de Minería es una de las edificaciones más relevantes del centro histórico de la Ciudad de México debido a su diseño y evolución arquitectonica desde sus inicios construtivos conocido como el Real Seminario de Minería.
+
+#### Etapa Manuel Tolsá 1797 - 1813
+
+El proyecto fue solicitado por la Real Academia de San Carlos de la Nueva España a cargo del arquitecto Español Manuel Tolsá. La construcción comenzó el 22 de Marzo de 1797 y culminando el año de 1813.
+
+De acuerdo con (*Rodríguez, 2016*) Hoy en día el Palacio de Minería no se puede considerar como una edificación del arquitecto Manuel Tolsá, debido a que el edificio ha tenido dos grandes intervenciones constructivas en su historia: 
+1. Antonio Villard Oleá de 1830 a 1842
+2. Sociedad de Ex Alumnos de la Facultad de Ingeniería (SEFI) de 1970 a 1976.
+
+### Etapa Antonio Villard 1830 - 1842
+
+Al termino de la construcción del Real Seminario de Minería, hoy en día conocido como el Palacio de minería; se menciono que el edifico apenas concluido su construcción ya presentaba deterioros constructivos, por ejemplo, grietas en las paredes; además que el año de 1813 ya se había hundido más de 60 cm (*Escamilla, 2011*).
+
+El encargado para evitar el derrumbe del edificio fue el arquitecto francés Antonio Villard Oleá entre los años de 1830 a 1842. El arquitecto Antonio Villard se concentro en la reedificación entera del piso alto del edifico y en la inclusión de contrafuertes en torno al bloque que forma la escalera y la capilla, sin embargo, no hizo nada para modificar o reparar la cimentación del edificio (*Escamilla, 2011*).
+
+Las principales modificaciones de Antonio de Villar Olea fueron: 
+- Agregar contrafuertes en el ala sur, para contrarrestar el hundimiento de la parte central (*Escamilla, 2011*).
+- Elevación del nivel de piso del patio central (*Guzmán y Rodríguez 2013a: 232-313*)
+
+### Etapa de la Sociedad de Ex alumnos de la Facultad de Ingeniería 1965 - 1975.
+
+El Palacio de Minería siguió en deterioro; entre los años de 1940 a 1960 continuaron las pequeñas obras preventivas en el mismo (*Rodríguez,  2016*). Para el año de 1964 la Sociedad de Ex Alumnos de la Facultad de Ingeniería se dio cuenta de las malas condiciones en que se encontraba el Palacio de Minería y se planteo su restauración (*Palacio de Minería, s.f*).
+
+Uno de los principales objetivos de esta restauración por la Sociedad de Ex alumnos de la Facultad de Ingeniería (SEFI) fue mejorar el sistema de drenaje, debido a que por su deficiencia provocaba frecuentes inundaciones en el edificio (*Palacio de Minería, s.f*).
+
+De acuerdo con la página web del [Palacio de Minería](https://www.palaciomineria.unam.mx/historia/restauracion.php){:target="_blank" rel="noopener noreferrer"} el trabajo de restauración se dividio en tres etapas: 
+1. Reestauración total del edifico para su absoluta seguridad.
+2. Reestauración del edificio conservando el estilo arquitectonico de Manuel Tolsá.
+3. Reacondicionamiento del edifico para aprovechar los espacios de acuerdo con el plan de trabajo de la Facultad de Ingeniería.
+
 
