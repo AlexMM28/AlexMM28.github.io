@@ -124,13 +124,13 @@ Las principales modificaciones de Antonio de Villar Olea fueron:
     {% include figure.liquid 
       loading="lazy" 
       path="assets/img/Palacio_de_mineria.jpg" 
-      title="Manuel Tolsá" 
+      title="Palacio de Minería S. XIX" 
       class="img-fluid rounded z-depth-1" 
     %}
   </div>
 </div>
 <div class="caption text-center">
-    Figura 2. Imagen del Colegio de Minería en el siglo XIX. Hoy en día el Palacio de Minería. 
+    Figura 3. Imagen del Colegio de Minería en el siglo XIX. Hoy en día el Palacio de Minería. 
 </div>
 
 ### Etapa de la Sociedad de Ex alumnos de la Facultad de Ingeniería 1965 - 1975.
@@ -151,13 +151,49 @@ De acuerdo con la página web del [Palacio de Minería](https://www.palaciominer
     {% include figure.liquid 
       loading="lazy" 
       path="assets/img/SEFI.jpg" 
-      title="Manuel Tolsá" 
+      title="SEFI" 
       class="img-fluid rounded z-depth-1" 
     %}
   </div>
 </div>
 <div class="caption text-center">
-    Figura 2. Logo de la Sociedad de Ex alumnos de la Facultad de Ingeniería (SEFI).
+    Figura 4. Logo de la Sociedad de Ex alumnos de la Facultad de Ingeniería (SEFI).
+</div>
+
+<hr>
+
+## ¿Por qué usamos TRE-3D?
+
+<div class="text-justify" markdown="1">
+
+Este trabajo se realizó debido a que el Palacio de Minería es un edificio ubicado en el centro histórico de la Ciudad de México, lo que hizo necesario el uso de una técnica no invasiva, como la Tomografía de Resistividad Eléctrica (TRE-3D), para llevar a cabo el estudio con éxito y preservar la estructura del edificio. La importancia de realizar este tipo de estudio radica en que la TRE-3D proporciona una visualización tridimensional del subsuelo, lo que podría explicar por qué el edificio continúa hundiéndose en la actualidad.
+
+</div>
+
+## Metodología 
+
+<div class="text-justify" markdown="1">
+
+Los levantamientos para el patio central del Palacio de Minería se realizaron en dos fechas diferentes, comenzando el 07 de agosto de 2024 y el 13 de agosto de 2024, ambos días comenzando después de las 20:00 horas. EL trabajo se realizó de manera nocturna para resguardar la seguridad de los visitantes del Palacio de Minería y también la seguridad del equipo.
+
+### Instrumentación
+
+Se utilizo un resistivimetro **Syscal Pro**, fabricado por **IRIS Instruments**, el cual mide resistividad con capacidad para el manejo de 48 electrodos los cuales son conectados a la consola y a la extensión por medio de cables **multi-core**.
+
+Para poder realizar el levantamiento geofísico se utilizaron electrodos de placa de material de cobre de 10 cm × 10 cm debido a que no se puede perforar por ser un edificio historico. El procedimiento para colocar las placas de cobre en el suelo, se vertía una cantidad de electrogel en la parte anterior de la placa para que estuviera mejor adherida al suelo, ya la placa colocada en el suelo dispersada de electrogel se le derramaba un chorro de agua para disminuir la resistencia del electrodo.
+
+</div>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/syscal.jpg" title="Syscal Pro" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/electrodo.jpg" title="Electrodo de placa de cobre" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Figura 5. Izquierda: Resistivimetro Syscal Pro de IRIS Instruments. | Derecha: Electrodo de placa de cobre. 
 </div>
 
 
