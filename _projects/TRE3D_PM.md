@@ -206,3 +206,5 @@ Para poder realizar el levantamiento geofísico se utilizaron electrodos de plac
 
 
 
+
+
