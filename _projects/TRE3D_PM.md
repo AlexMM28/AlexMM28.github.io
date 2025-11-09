@@ -185,22 +185,24 @@ Para poder realizar el levantamiento geofísico se utilizaron **electrodos de pl
 
 </div>
 
-<div class="row justify-content-center">
-  <div class="col-sm-6 mt-3 mt-md-0">
+<div class="row justify-content-center align-items-center">
+  <div class="col-sm-6 mt-3 mt-md-0 text-center">
     {% include figure.liquid 
       path="/assets/img/syscal.jpg" 
       title="Resistivímetro Syscal Pro de IRIS Instruments" 
       class="img-fluid rounded z-depth-1" 
       loading="lazy" 
+      style="height:300px; object-fit:cover;"
     %}
   </div>
 
-  <div class="col-sm-6 mt-3 mt-md-0">
+  <div class="col-sm-6 mt-3 mt-md-0 text-center">
     {% include figure.liquid 
       path="/assets/img/electrodo.jpg" 
       title="Electrodo de placa de cobre" 
       class="img-fluid rounded z-depth-1" 
       loading="lazy" 
+      style="height:300px; object-fit:cover;"
     %}
   </div>
 </div>
@@ -208,6 +210,7 @@ Para poder realizar el levantamiento geofísico se utilizaron **electrodos de pl
 <div class="caption text-center mt-2">
   Figura 5. Izquierda: Resistivímetro Syscal Pro de IRIS Instruments. | Derecha: Electrodo de placa de cobre.
 </div>
+
 
 
 
