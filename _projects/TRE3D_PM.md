@@ -211,6 +211,65 @@ Para poder realizar el levantamiento geofísico se utilizaron **electrodos de pl
   Figura 5. Izquierda: Resistivímetro Syscal Pro de IRIS Instruments. | Derecha: Electrodo de placa de cobre.
 </div>
 
+### Levantamiento 
+
+<div class="text-justify" markdown="1">
+
+Fueron utilizados **160 placas de cobre** como electrodos para realizar **5 perfiles**, se dio un espaciamiento entre electrodos de **1.5 metros** y una separación de **6 metros** entre perfiles paralelos, conformando cada línea con **16 electrodos**.
+
+Se utilizó la técnica de *Roll-Along lateral* debido a que esta configuración permite emplear multiples tipos de arreglos. Para el levantamiento se realizaron los arreglos **Wenner-Schlumberguer, Ecuatorial y Mínimo Acoplamiento**. 
+
+Como se había menicionado anteriormente, los levantamientos en el Palacio de Minería se realizaron dos fechas distintas. 
+
+El 7 de agosto de 2024, se realizó el 50% de un *Roll-Along lateral*. Se considero de largo cada perfil de 22.5 metros cada uno, y se consideró una pestaña de 1.45 respecto al ala sureste (origen del arreglo). La separación entre electrodos fue de 1.5 m y la separación entre perfiles
+fueron de 6 metros, dando un **total de 80 electrodos para 5 perfiles**.
+
+Durante la primera jornada se ejecutaron las dos primeras secuencias del *Roll Along lateral*: **PM-E03r0**, que va desde el perfil 1 al perfil perfil 3, y **PM-E03r1**, que va desde el perfil 3 al perfil 5. Es importante señalar que el **perfil 3** (representado en círculos verdes) fue **reutilizado como nodo de transición entre amabas secuencias**, lo que permitio mantener la continuidad del arreglo.
+
+</div>
+
+<div class="row">
+  <div class="col-sm-8 mt-3 mt-md-4">
+    {% include figure.liquid loading="eager" path="assets/img/PM-E03.jpg" title="Secuencia PM-E03" class="img-fluid rounded z-depth-1" %}
+  </div>
+</div>
+<div class="caption text-center mt-2">
+    Figura 6. Tendido utilizado el día 7 agosto de 2024. Lo círculos rojos están asociados a la secuencia PME03r0, los círculos azules están relacionados con la secuencia PM-E03r1; mientras que los círculos verdes están asociados al perfil 3 que es el que fue reutilizado para completar el 50% del Roll Along lateral. Los círculos indican la posición de cada electrodo.
+</div>
+
+<div class="row">
+  <div class="col-sm-8 mt-3 mt-md-4">
+    {% include figure.liquid loading="eager" path="assets/img/loc1.jpg" title="Esquema localización día 1" class="img-fluid rounded z-depth-1" %}
+  </div>
+</div>
+<div class="caption text-center mt-2">
+    Figura 7. Esquema de localización del arreglo del día 07 de agosto de 2024 con las secuencias PM-E03r0 y PM-E03r1 superpuestos en el plano del Palacio de Minería.
+</div>
+
+
+<div class="text-justify" markdown="1">
+
+Para la segunda jornada de adquisición, realizada el 13 de agosto de 2024, se completo el *Roll Along lateral* utilizando los mismo paramentros de medición, configuración de electrodos y distancias. Ahora los perfiles fueron reorientados en sentido Sur-Norte y se ejecutaron las secuencias **PM-E04r0** que va desde el perfil 1 al 3 y **PM-E04r1** que va desde el perfil 3 al 5. Al igual que en la primera jornada, se reutilizo el perfil 3 para enlazar las dos secuencias finales. 
+
+</div>
+
+<div class="row">
+  <div class="col-sm-8 mt-3 mt-md-4">
+    {% include figure.liquid loading="eager" path="assets/img/PM-E04.jpg" title="Secuencia PM-E04" class="img-fluid rounded z-depth-1" %}
+  </div>
+</div>
+<div class="caption text-center mt-2">
+    Figura 8. Tendido utilizado el día 20 agosto de 2024. Lo círculos morados están asociados a la secuencia PM-E04r0, los círculos naranjas están relacionados con la secuencia PM-E04r1; mientras que los círculos verdes están asociados al perfil 3 que es el que fue reutilizado para completar el 100% del Roll Along lateral. Los círculos indican la posición de cada electrodo.
+</div>
+
+<div class="row">
+  <div class="col-sm-8 mt-3 mt-md-4">
+    {% include figure.liquid loading="eager" path="assets/img/loc2.jpg" title="Esquema localización día 2" class="img-fluid rounded z-depth-1" %}
+  </div>
+</div>
+<div class="caption text-center mt-2">
+    Figura 7. Esquema de localización del arreglo del día 13 de agosto de 2024 con las secuencias PM-E04r0 y PM-E04r1 superpuestos en el plano del Palacio de Minería.
+</div>
 
 
 
