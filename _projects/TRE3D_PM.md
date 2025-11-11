@@ -228,7 +228,7 @@ Durante la primera jornada se ejecutaron las dos primeras secuencias del *Roll A
 
 </div>
 
-<div class="row">
+<div class="row justify-content-center">
   <div class="col-sm-8 mt-3 mt-md-4">
     {% include figure.liquid loading="eager" path="assets/img/PM-E03.jpg" title="Secuencia PM-E03" class="img-fluid rounded z-depth-1" %}
   </div>
@@ -237,7 +237,7 @@ Durante la primera jornada se ejecutaron las dos primeras secuencias del *Roll A
     Figura 6. Tendido utilizado el día 7 agosto de 2024. Lo círculos rojos están asociados a la secuencia PME03r0, los círculos azules están relacionados con la secuencia PM-E03r1; mientras que los círculos verdes están asociados al perfil 3 que es el que fue reutilizado para completar el 50% del Roll Along lateral. Los círculos indican la posición de cada electrodo.
 </div>
 
-<div class="row">
+<div class="row justify-content-center">
   <div class="col-sm-8 mt-3 mt-md-4">
     {% include figure.liquid loading="eager" path="assets/img/loc1.jpg" title="Esquema localización día 1" class="img-fluid rounded z-depth-1" %}
   </div>
@@ -253,7 +253,7 @@ Para la segunda jornada de adquisición, realizada el 13 de agosto de 2024, se c
 
 </div>
 
-<div class="row">
+<div class="row justify-content-center">
   <div class="col-sm-8 mt-3 mt-md-4">
     {% include figure.liquid loading="eager" path="assets/img/PM-E04.jpg" title="Secuencia PM-E04" class="img-fluid rounded z-depth-1" %}
   </div>
@@ -262,7 +262,7 @@ Para la segunda jornada de adquisición, realizada el 13 de agosto de 2024, se c
     Figura 8. Tendido utilizado el día 20 agosto de 2024. Lo círculos morados están asociados a la secuencia PM-E04r0, los círculos naranjas están relacionados con la secuencia PM-E04r1; mientras que los círculos verdes están asociados al perfil 3 que es el que fue reutilizado para completar el 100% del Roll Along lateral. Los círculos indican la posición de cada electrodo.
 </div>
 
-<div class="row">
+<div class="row justify-content-center">
   <div class="col-sm-8 mt-3 mt-md-4">
     {% include figure.liquid loading="eager" path="assets/img/loc2.jpg" title="Esquema localización día 2" class="img-fluid rounded z-depth-1" %}
   </div>
