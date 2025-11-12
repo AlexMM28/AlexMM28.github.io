@@ -170,6 +170,8 @@ Este trabajo se realizó debido a que el Palacio de Minería es un edificio ubic
 
 </div>
 
+<hr>
+
 ## Metodología 
 
 <div class="text-justify" markdown="1">
@@ -270,6 +272,8 @@ Para la segunda jornada de adquisición, realizada el 13 de agosto de 2024, se c
 <div class="caption text-center mt-2">
     Figura 7. Esquema de localización del arreglo del día 13 de agosto de 2024 con las secuencias PM-E04r0 y PM-E04r1 superpuestos en el plano del Palacio de Minería.
 </div>
+
+<hr>
 
 ## Resultados
 
