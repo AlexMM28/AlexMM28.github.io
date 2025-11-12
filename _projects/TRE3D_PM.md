@@ -271,6 +271,98 @@ Para la segunda jornada de adquisición, realizada el 13 de agosto de 2024, se c
     Figura 7. Esquema de localización del arreglo del día 13 de agosto de 2024 con las secuencias PM-E04r0 y PM-E04r1 superpuestos en el plano del Palacio de Minería.
 </div>
 
+## Resultados
+
+<div class="text-justify" markdown="1">
+
+A partir de la inversión y modelado tridimensional de los datos adquiridos durante la prospección geofísica en el patio central del Palacio de Mínería, se generaron cubos de isosuperficie de resistividad con el objetivo de visualizar y delimitar anomalías asociadas a posibles estructuras subterráneas o zonas de alteración  del subsuelo. El modelo resultante se construyo a partir de 2,580 datos, presento un error RMS (Root Mean Square) de 13.4%. así como una valor de la norma L2 de 2.7.
+
+La tomografía de resistividad eléctrica en 3D realizada en el patio central del Palacio de Minería se tiene una isosuperficie con un valor de 3.16 Ω•m, que representa zonas de muy baja resistividad. Este valor es característico de materiales arcillosos altamente saturados en agua o incluso de acumulaciones de agua libre que podrían ser posibles fugas de agua. 
+
+En la **Figura 8** se muestra la estructura A que es una alineación en dirección Norte-Sur, lo cual es posible relación con la geometría estructural del subsuelo o con la disposición de antiguos sistemas de drenaje.
+
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-sm-8 mt-3 mt-md-4">
+    {% include figure.liquid loading="eager" path="assets/img/RES1.jpg" title="Modelo 1" class="img-fluid rounded z-depth-1" %}
+  </div>
+</div>
+<div class="caption text-center mt-2">
+    Figura 8. Vista de planta de la isosuperficie con un valor de ρ = 3.16 Ω•m.
+</div>
+
+<div class="text-justify" markdown="1">
+
+En la **Figura 9** se observa la estructura A tiene unas dimensiones aproximadamente de 22 m de longitud y 10 m de ancho, se extiende hasta la profundidad máxima del estudio, de 4.5 metros.
+
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-sm-8 mt-3 mt-md-4">
+    {% include figure.liquid loading="eager" path="assets/img/RES2.jpg" title="Modelo 2" class="img-fluid rounded z-depth-1" %}
+  </div>
+</div>
+<div class="caption text-center mt-2">
+    Figura 9. a) Vista desde el flanco Norte de la isosuperficie con valor de ρ = 3.16 Ω•m y b) Vista desde el frente Sur de la isosuperficie con valor de ρ = 3.16 Ω•m
+</div>
+
+
+<div class="text-justify" markdown="1">
+
+A continuación, se muestra la isosuperficie correspondiente con una resistividad de 15.85 Ω•m que representa zonas de resistividad intermedia, que están asociadas materiales arcillosos parcialmente saturados, rellenos constructivos húmedos o mezclas heterogéneas de suelo con contenido variable de agua. De acuerdo con la **Figura 10** se observa una distribución más extendida y reticulada, la geometría se ve conectada de manera lateral y este valor de resistividad abarca una mayor proporción del volumen del subsuelo; además, se observan zonas interconectadas que representan caminos preferenciales de humedad.
+
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-sm-8 mt-3 mt-md-4">
+    {% include figure.liquid loading="eager" path="assets/img/RES3.jpg" title="Modelo 3" class="img-fluid rounded z-depth-1" %}
+  </div>
+</div>
+<div class="caption text-center mt-2">
+    Figura 10. a) Vista de planta de la isosuperficie con un valor de ρ = 15.85 Ω•m y b) Vista desde el flanco norte de la isosuperficie con valor ρ = 15.85 Ω•m
+</div>
+
+<div class="text-justify" markdown="1">
+
+En la siguiente imagen **(Figura 11)** se muestra la isosuperficie con un valor de 165.96 Ω•m representan zonas de alta resistividad, que estas se concentran principalmente en los primeros metros bajo la superficie.
+Se observa que estos cuerpos resistivos no superan los dos metros de profundidad, estos valores altos de resistividad son característicos de materiales compactos y secos, como baldosas, losas o rellenos constructivos con bajo contenido de humedad.
+</div>
+
+<div class="row justify-content-center align-items-center">
+  <div class="col-sm-6 mt-3 mt-md-0 text-center">
+    {% include figure.liquid 
+      path="/assets/img/RES4.jpg" 
+      title="Modelo 4 A" 
+      class="img-fluid rounded z-depth-1" 
+      loading="lazy" 
+      style="height:300px; object-fit:cover;"
+    %}
+  </div>
+
+  <div class="col-sm-6 mt-3 mt-md-0 text-center">
+    {% include figure.liquid 
+      path="/assets/img/RES4B.jpg" 
+      title="Modelo 4 B" 
+      class="img-fluid rounded z-depth-1" 
+      loading="lazy" 
+      style="height:300px; object-fit:cover;"
+    %}
+  </div>
+</div>
+
+<div class="caption text-center mt-2">
+  Figura 11. Izquierda: Vista desde el frente sur de la isosuperficie con un valor de ρ = 165.96 Ω•m | Derecha: Vista desde el frente sur de la isosuperficie con un valor de ρ = 165.96 Ω•m
+</div>
+
+
+<div class="text-justify" markdown="1">
+
+Debido al contexto histórico y constructivo del Palacio de Minería, este valor de isosuperficie puede estar relacionado con elementos construtivos, particularmente con las intervenciones que realizo el arquitecto Antonio Villard Olea que realizo obras de reedificación entre 1830 y 1842. Una de estas intervenciones fue la elevación del nivel de piso del patio central (Guzmán y Rodríguez 2013a: 232-313), lo que podrían explicar la presencia de estos cuerpos resistivos a poca profundidad.
+
+</div>
+
+
 
 
 
