@@ -333,30 +333,28 @@ En la siguiente imagen **(Figura 11)** se muestra la isosuperficie con un valor 
 Se observa que estos cuerpos resistivos no superan los dos metros de profundidad, estos valores altos de resistividad son característicos de materiales compactos y secos, como baldosas, losas o rellenos constructivos con bajo contenido de humedad.
 </div>
 
-<div class="row justify-content-center align-items-center">
-  <div class="col-sm-6 mt-3 mt-md-0 text-center">
+<div class="row justify-content-center">
+  <div class="col-sm-8 mt-3 mt-md-0">
     {% include figure.liquid 
-      path="/assets/img/RES4.jpg" 
-      title="Modelo 4 A" 
-      class="img-fluid rounded z-depth-1" 
       loading="lazy" 
-      style="height:300px; object-fit:cover;"
+      path="assets/img/RES4.jpg" 
+      title="Modelo 4A" 
+      class="img-fluid rounded z-depth-1"
     %}
   </div>
 
-  <div class="col-sm-6 mt-3 mt-md-0 text-center">
+  <div class="col-sm-8 mt-3 mt-md-4">
     {% include figure.liquid 
-      path="/assets/img/RES4B.jpg" 
-      title="Modelo 4 B" 
-      class="img-fluid rounded z-depth-1" 
       loading="lazy" 
-      style="height:300px; object-fit:cover;"
+      path="assets/img/RES4B.jpg" 
+      title="Modelo 4B" 
+      class="img-fluid rounded z-depth-1"
     %}
   </div>
 </div>
 
 <div class="caption text-center mt-2">
-  Figura 11. Izquierda: Vista desde el frente sur de la isosuperficie con un valor de ρ = 165.96 Ω•m | Derecha: Vista desde el frente sur de la isosuperficie con un valor de ρ = 165.96 Ω•m
+    Figura 11. Arriba: Vista desde el frente sur de la isosuperficie con un valor de ρ = 165.96 Ω•m | Abajo: Vista desde el frente sur de la isosuperficie con un valor de ρ = 165.96 Ω•m
 </div>
 
 
@@ -366,7 +364,21 @@ Debido al contexto histórico y constructivo del Palacio de Minería, este valor
 
 </div>
 
+<hr>
 
+## Conclusiones 
+
+<div class="text-justify" markdown="1">
+
+El presente estudio de tomografía de resistividad eléctrica 3D realizado en el patio central del Palacio de Minería permitió construir un modelo tridimensional del subsuelo, lo que permitió la identificación y la caracterización de anomalías estructurales que podrían estar relacionadas con el hundimiento no homogéneo del edificio. Los resultados obtenidos revelan la presencia de cuerpos y variaciones en los valores de resistividad eléctrica, los cuales proporcionan información la composición y el estado de los materiales presentes en el subsuelo.
+
+Uno de los hallazgos más significativos fue la identifiación de la estrutura A, caracterizada por un valor de resistividad de 3.16 Ω•m, la cual se presenta una alineación de orientación Norte-Sur con dimensiones aproximadamente de 22 m de longitud y 10 metros de ancho. Esta anomalía se prolonga hasta la profundidad máxima investugada de 4.5 m. Su geometría y orientación sugieren una posible relación con la estrutura interna del subsuelo o con antiguos sistemas de derejane presentes en el edifico. Los bajos valores de resistividad y su continuidad en profundidad inidcan condiciones de saturación prolongada, probablemente asociadas con la comprensibilidad de los materiales arcillosos. Este comportamiento podría estar contribuyendo de manera relevante al hundimiento diferencial del edificio.
+
+También se identificaron cuerpos con valores de alta resistividad en niveles superficiles, con valores de isosuperficie de 165.96 Ω•m, localizados principalmente a profundidades de 0.5 m y 1.0 m, cuya presencia disminuye a 1.5 m. Este comportamiento sugiere que su oirgen es principalmente superficial. Considerando el contexto histórico y constructivo del Palacio de Minería, este rango de valor podría estar asociado a elementos constructivos antiguos, particularmente a las modificaciones realizadas por el arquitecto Antonio Villard Olea entre 1830 y 1842, destacando la elevación del nivel de piso del patio central. Esta intervención podría explicar la presencia de cuerpos resistivos someros observados en el modelo.
+
+En conclusión, este trabajo demuestra que la tomografía de resistividad eléctrica tridimensional es una herramienta eficaz para la identificación y caracterización de anomalías estruturales y geológicas en edificaciones históricas. 
+
+</div>
 
 
 
