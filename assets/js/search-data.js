@@ -451,7 +451,7 @@ ninja.data = [{
               window.location.href = "/projects/9_project/";
             },},{id: "projects-tomografía-de-resistividad-eléctrica-en-el-palacio-de-minería-ciudad-de-méxico",
           title: 'Tomografía de Resistividad Eléctrica en el Palacio de Minería, Ciudad de México.',
-          description: "Estudio geofísico con Tomografía de Resistividad Eléctrica 3D para la caracterización del subsuelo y cimientos del patio central del Palacio de Minería.",
+          description: "Alejandro Maldonado-Medina, Gerardo Cifuentes-Nava, Miguel Cervantes-Solano",
           section: "Projects",handler: () => {
               window.location.href = "/projects/TRE3D_PM/";
             },},{
