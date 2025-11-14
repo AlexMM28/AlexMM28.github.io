@@ -380,6 +380,31 @@ En conclusión, este trabajo demuestra que la tomografía de resistividad eléct
 
 </div>
 
+<hr>
+
+## Bibliografía
+
+<div class="text-justify" markdown="1">
+
+Argote-Espino, D., A. Tejero-Andrade, G. Cifuentes-Nava, L. Iriarte, S. Farías, R. E. Chávez, F. López. (2013). 3D electrical prospection in the archaeological site of El Pahñú, Hidalgo State, Central Mexico. Journal of Archaeological Science 40/2: 1213-1223
+
+Chávez, R. E., A. Tejero, G. Cifuentes, E. Hernández,D. Aguilar. (2015). Imaging Fractures beneath a Resi-dential Complex Using Novel 3-D Electrical Resistivi-ty Arrays. Journal of Environmental & Engineering Geo-physics 20/3: 219-233
+
+Paz-Arellano, P., Tejero‐Andrade, A., & Argote‐Espino, D.L. (2017). 2D‐ERT Survey for the Identification of Archaeological and Historical Structures beneath the Plaza of Santo Domingo, Mexico City, Mexico. Archaeological Prospection, 24, 183 - 194.
+
+Escamilla Gonzales, F. (2011) El edificio, apenas concluido, comenzó a deteriorarse: Las memorias de construcción y reparación del Colegio de Minería, 1797-1824. Boletín de Monumentos Históricos, Tercera época, núm. 22, 131-154. Instituto Nacional de Antropología e Historia.
+Obtenido de: https://revistas.inah.gob.mx/index.php/boletinmonumentos/article/view/2167/2092
+
+Guzmán Monroy, V., & Rodríguez Morales, L. (2013a). Antonio Villard Olea y la re-edificación del Colegio de Minería: 1827–1860. En Escamilla González (Coord.), La arquitectura de la ingeniería en México: Siglo XIX (pp. 232–313). Universidad Nacional Autónoma de México.
+
+Rodríguez Morales, L. (2016) El Palacio de Minería, entre la tradición y la modernidad: nuevos sistemas y materiales constructivos (1900-1930). Boletín de Monumentos Históricos, Tercera época, núm. 36, 53-76. Instituto Nacional de Antropología. Obtenido de: https://revistas.inah.gob.mx/index.php/boletinmonumentos/article/view/10928/11694
+
+Palacio de Minería. (s.f.). Restauración del Palacio de Minería. Universidad Nacional Autónoma de México. https://www.palaciomineria.unam.mx/historia/restauracion.php 
+
+</div>
+
+
+
 
 
 
