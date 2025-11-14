@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Tomografía de Resistividad Eléctrica en el Palacio de Minería, Ciudad de México.
-description: Estudio geofísico con Tomografía de Resistividad Eléctrica 3D para la caracterización del subsuelo y cimientos del patio central del Palacio de Minería.
+description: Alejandro Maldonado-Medina, Gerardo Cifuentes-Nava, Miguel Cervantes-Solano
 img: /assets/img/PM01.jpg
 importance: 1
 category: Geofísica
