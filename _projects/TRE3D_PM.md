@@ -8,6 +8,9 @@ category: Geofísica
 related_publications: false
 ---
 
+* TOC
+{:toc}
+
 ## Resumen
 
 <div class="text-justify" markdown="1">
@@ -270,7 +273,7 @@ Para la segunda jornada de adquisición, realizada el 13 de agosto de 2024, se c
   </div>
 </div>
 <div class="caption text-center mt-2">
-    Figura 7. Esquema de localización del arreglo del día 13 de agosto de 2024 con las secuencias PM-E04r0 y PM-E04r1 superpuestos en el plano del Palacio de Minería.
+    Figura 9. Esquema de localización del arreglo del día 13 de agosto de 2024 con las secuencias PM-E04r0 y PM-E04r1 superpuestos en el plano del Palacio de Minería.
 </div>
 
 <hr>
@@ -283,7 +286,7 @@ A partir de la inversión y modelado tridimensional de los datos adquiridos dura
 
 La tomografía de resistividad eléctrica en 3D realizada en el patio central del Palacio de Minería se tiene una isosuperficie con un valor de 3.16 Ω•m, que representa zonas de muy baja resistividad. Este valor es característico de materiales arcillosos altamente saturados en agua o incluso de acumulaciones de agua libre que podrían ser posibles fugas de agua. 
 
-En la **Figura 8** se muestra la estructura A que es una alineación en dirección Norte-Sur, lo cual es posible relación con la geometría estructural del subsuelo o con la disposición de antiguos sistemas de drenaje.
+En la **Figura 10** se muestra la estructura A que es una alineación en dirección Norte-Sur, lo cual es posible relación con la geometría estructural del subsuelo o con la disposición de antiguos sistemas de drenaje.
 
 </div>
 
@@ -293,12 +296,12 @@ En la **Figura 8** se muestra la estructura A que es una alineación en direcci�
   </div>
 </div>
 <div class="caption text-center mt-2">
-    Figura 8. Vista de planta de la isosuperficie con un valor de ρ = 3.16 Ω•m.
+    Figura 10. Vista de planta de la isosuperficie con un valor de ρ = 3.16 Ω•m.
 </div>
 
 <div class="text-justify" markdown="1">
 
-En la **Figura 9** se observa la estructura A tiene unas dimensiones aproximadamente de 22 m de longitud y 10 m de ancho, se extiende hasta la profundidad máxima del estudio, de 4.5 metros.
+En la **Figura 11** se observa la estructura A tiene unas dimensiones aproximadamente de 22 m de longitud y 10 m de ancho, se extiende hasta la profundidad máxima del estudio, de 4.5 metros.
 
 </div>
 
@@ -308,13 +311,13 @@ En la **Figura 9** se observa la estructura A tiene unas dimensiones aproximadam
   </div>
 </div>
 <div class="caption text-center mt-2">
-    Figura 9. a) Vista desde el flanco Norte de la isosuperficie con valor de ρ = 3.16 Ω•m y b) Vista desde el frente Sur de la isosuperficie con valor de ρ = 3.16 Ω•m
+    Figura 11. a) Vista desde el flanco Norte de la isosuperficie con valor de ρ = 3.16 Ω•m y b) Vista desde el frente Sur de la isosuperficie con valor de ρ = 3.16 Ω•m
 </div>
 
 
 <div class="text-justify" markdown="1">
 
-A continuación, se muestra la isosuperficie correspondiente con una resistividad de 15.85 Ω•m que representa zonas de resistividad intermedia, que están asociadas materiales arcillosos parcialmente saturados, rellenos constructivos húmedos o mezclas heterogéneas de suelo con contenido variable de agua. De acuerdo con la **Figura 10** se observa una distribución más extendida y reticulada, la geometría se ve conectada de manera lateral y este valor de resistividad abarca una mayor proporción del volumen del subsuelo; además, se observan zonas interconectadas que representan caminos preferenciales de humedad.
+A continuación, se muestra la isosuperficie correspondiente con una resistividad de 15.85 Ω•m que representa zonas de resistividad intermedia, que están asociadas materiales arcillosos parcialmente saturados, rellenos constructivos húmedos o mezclas heterogéneas de suelo con contenido variable de agua. De acuerdo con la **Figura 12** se observa una distribución más extendida y reticulada, la geometría se ve conectada de manera lateral y este valor de resistividad abarca una mayor proporción del volumen del subsuelo; además, se observan zonas interconectadas que representan caminos preferenciales de humedad.
 
 </div>
 
@@ -324,12 +327,12 @@ A continuación, se muestra la isosuperficie correspondiente con una resistivida
   </div>
 </div>
 <div class="caption text-center mt-2">
-    Figura 10. a) Vista de planta de la isosuperficie con un valor de ρ = 15.85 Ω•m y b) Vista desde el flanco norte de la isosuperficie con valor ρ = 15.85 Ω•m
+    Figura 12. a) Vista de planta de la isosuperficie con un valor de ρ = 15.85 Ω•m y b) Vista desde el flanco norte de la isosuperficie con valor ρ = 15.85 Ω•m
 </div>
 
 <div class="text-justify" markdown="1">
 
-En la siguiente imagen **(Figura 11)** se muestra la isosuperficie con un valor de 165.96 Ω•m representan zonas de alta resistividad, que estas se concentran principalmente en los primeros metros bajo la superficie.
+En la siguiente imagen **(Figura 13)** se muestra la isosuperficie con un valor de 165.96 Ω•m representan zonas de alta resistividad, que estas se concentran principalmente en los primeros metros bajo la superficie.
 Se observa que estos cuerpos resistivos no superan los dos metros de profundidad, estos valores altos de resistividad son característicos de materiales compactos y secos, como baldosas, losas o rellenos constructivos con bajo contenido de humedad.
 </div>
 
@@ -354,7 +357,7 @@ Se observa que estos cuerpos resistivos no superan los dos metros de profundidad
 </div>
 
 <div class="caption text-center mt-2">
-    Figura 11. Arriba: Vista desde el frente sur de la isosuperficie con un valor de ρ = 165.96 Ω•m | Abajo: Vista desde el frente sur de la isosuperficie con un valor de ρ = 165.96 Ω•m
+    Figura 13. Arriba: Vista desde el frente sur de la isosuperficie con un valor de ρ = 165.96 Ω•m | Abajo: Vista desde el frente sur de la isosuperficie con un valor de ρ = 165.96 Ω•m
 </div>
 
 
@@ -379,6 +382,10 @@ También se identificaron cuerpos con valores de alta resistividad en niveles su
 En conclusión, este trabajo demuestra que la tomografía de resistividad eléctrica tridimensional es una herramienta eficaz para la identificación y caracterización de anomalías estruturales y geológicas en edificaciones históricas. 
 
 </div>
+
+<hr>
+
+## Agradecimientos
 
 <hr>
 
