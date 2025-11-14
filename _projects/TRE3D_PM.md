@@ -5,7 +5,7 @@ description: Estudio geofísico con Tomografía de Resistividad Eléctrica 3D pa
 img: /assets/img/PM01.jpg
 importance: 1
 category: Geofísica
-related_publications: true
+related_publications: false
 ---
 
 ## Resumen
