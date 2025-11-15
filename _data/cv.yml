@@ -34,14 +34,15 @@ volunteer:
       Presentador de póster científico: "Análisis del comportamiento térmico del
       subsuelo en el campo geotérmico de Los Azufres, Michoacán mediante registros
       sísmicos y geofísicos de pozos."
-  - organization: 'Sexta Conferencia Virtual de Estudiantes de América Latina – SEG (Society of Exploration Geophysicists)'
+  - organization: "Sexta Conferencia Virtual de Estudiantes de América Latina SEG (Society of Exploration Geophysicists)"
     position: "Expositor"
     location: "Virtual"
     startDate: "2025-10-16"
     endDate: "2025-10-17"
     summary: >
-      Presentación en inglés de Tomografía de Resistividad Eléctrica 3D en el Palacio de Minería, Ciudad de México en foro académico especializado, 
+      Presentación en inglés de Tomografía de Resistividad Eléctrica 3D en el Palacio de Minería, Ciudad de México en foro académico especializado,
       destacando aplicaciones geofísicas y resultados.
+
     
 
 certificates:
