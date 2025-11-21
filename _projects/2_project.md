@@ -7,18 +7,21 @@ importance: 2
 category: Ciencia de Datos
 giscus_comments: false
 ---
-## DATASET 
 
-<div class="text-justify" markdown="1">
+## DATASET
 
-El dataset utilizado en este proyecto proviene de la plataforma Kaggle y contiene información sobre características demográficas, hábitos y factores médicos relacionados con el costo de seguros de salud.
+<div class="text-justify">
+{:markdown="1"}
+
+El dataset utilizado en este proyecto proviene de la plataforma Kaggle y contiene información sobre características demográficas, hábitos y factores médicos relacionados con el costo de seguros de salud.  
 Puedes consultarlo en la siguiente dirección dando click [aquí](https://www.kaggle.com/datasets/mosapabdelghany/medical-insurance-cost-dataset){:target="_blank" rel="noopener noreferrer"}
 
 </div>
 
 ## Descripción del proyecto
 
-<div class="text-justify" markdown="1">
+<div class="text-justify">
+{:markdown="1"}
 
 Este proyecto consiste en analizar y modelar el costo de los seguros médicos utilizando técnicas de Ciencia de Datos y Machine Learning. A partir del dataset **Insurance**, que incluye información como edad, índice de masa corporal (BMI), número de hijos, tabaquismo, sexo y región, se desarrolla un proceso completo que abarca desde el análisis exploratorio de datos (EDA) hasta la implementación de modelos predictivos.
 
