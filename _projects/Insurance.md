@@ -1,81 +1,134 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image and giscus comments
-img: assets/img/3.jpg
+title: Predicción del costo de seguros médicos con Machine Learning.
+description: Alejandro Maldonado-Medina
+img: assets/img/insurance_cover.jpg
 importance: 2
-category: work
+category: Ciencia de Datos
 giscus_comments: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+## DATASET
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+<div class="text-justify">
+{:markdown="1"}
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+El dataset utilizado en este proyecto proviene de la plataforma Kaggle y contiene información sobre características demográficas, hábitos y factores médicos relacionados con el costo de seguros de salud.  
+Puedes consultarlo en la siguiente dirección dando click [aquí](https://www.kaggle.com/datasets/mosapabdelghany/medical-insurance-cost-dataset){:target="_blank" rel="noopener noreferrer"}
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
 </div>
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+## Descripción del proyecto
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
+<div class="text-justify">
+{:markdown="1"}
+
+Este proyecto consiste en analizar y modelar el costo de los seguros médicos utilizando técnicas de Ciencia de Datos y Machine Learning. A partir del dataset **Insurance**, que incluye información como edad, índice de masa corporal (BMI), número de hijos, tabaquismo, sexo y región, se desarrolla un proceso completo que abarca desde el análisis exploratorio de datos (EDA) hasta la implementación de modelos predictivos.
+
+El objetivo principal es **predecir el costo del seguro médico** con base en características demográficas y de salud de los asegurados. Para lograrlo, se aplican distintas etapas de limpieza, transformación de datos, visualización y prueba de varios modelos de regresión supervisada.
+
+Los objetivos específicos del proyecto son:
+
+- Comprender la estructura del dataset y analizar las relaciones entre variables por medio de visualizaciones estadísticas.
+- Aplicar una adecuada preparación de datos mediante codificación de variables categóricas, estandarización y división de datos en entrenamiento y prueba.
+- Construir distintos modelos de Machine Learning (Regresión Lineal, Árbol de Decisión y K-Nearest Neighbors) para analizar y comparar su desempeño predictivo.
+- Evaluar los modelos utilizando métricas como MAE, MSE y R².
+- Identificar las variables que más influyen en la determinación del costo del seguro.
+
+Este proyecto forma parte del portafolio de Ciencia de Datos y tiene como finalidad demostrar habilidades en análisis exploratorio, preprocesamiento de datos, modelado predictivo y comunicación de resultados.
+
 </div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+## Metodología 
 
-{% raw %}
+<div class="text-justify" markdown="1">
 
-```html
-<div class="row justify-content-sm-center">
+La metodología aplicada en este proyecto sigue un flujo de trabajo típico de Ciencia de Datos, comenzando con la exploración del conjuntos de datos, seguido de su preparación para el modelado. El proceso se divide en dos etapas principales: Análisis Exploratorio de Datos y Procesamiento/Preprocesamiento de los datos.
+
+### 1. Análisis Exploratorio de Datos 
+
+Se realizó un análisis exploratorio completo con el objetivo de comprender la estructura del dataset y detectar patrones relevantes en las variables.
+Las actividades principales fueron: 
+- Revisión inicial del dataset: dimensiones, tipos de datos, valores faltantes y estadísticas descriptivas.
+- Visualización de distribuciones: histogramas y boxplots para identificar la forma de las distribuciones y posibles valores atípicos. 
+
+<div class="row justify-content-center">
   <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+    {% include figure.liquid 
+      loading="lazy" 
+      path="assets/img/histograms1.jpg" 
+      title="histograma" 
+      class="img-fluid rounded z-depth-1"
+    %}
   </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+
+  <div class="col-sm-8 mt-3 mt-md-4">
+    {% include figure.liquid 
+      loading="lazy" 
+      path="assets/img/boxplots1.jpg" 
+      title="boxplot" 
+      class="img-fluid rounded z-depth-1"
+    %}
   </div>
 </div>
-```
 
-{% endraw %}
+<div class="caption text-center mt-2">
+    Figura 1. Arriba: Histogramas de distribuciones de las varibles: Age, BMI, Children y Charges | Abajo: Boxplots de las vairbles: Age, BMI, Children y Charges
+</div>
+
+- Análisis de correlación: se generó un mapa de calor (heatmap) paara conocer las relaciones entre variables númericas, destacando la fuerte relación entre el tabaquismo y el costo del seguro. 
+
+<div class="row justify-content-center">
+  <div class="col-sm-8 mt-3 mt-md-4">
+    {% include figure.liquid loading="eager" path="assets/img/hmap.jpg" title="Mapa de calor" class="img-fluid rounded z-depth-1" %}
+  </div>
+</div>
+<div class="caption text-center mt-2">
+    Figura 2. Análisis de correlación representado en un mapa de calor (Heatmap)
+</div>
+
+- Comparaciones entre grupos: se realizaron gráficos para analizar diferencias en cargos médicos entre fumadores y no fumadores, así como entre regiones. 
+
+<div class="row justify-content-center">
+  <div class="col-sm-8 mt-3 mt-md-0">
+    {% include figure.liquid 
+      loading="lazy" 
+      path="assets/img/charges_by_smoker.jpg" 
+      title="boxplot" 
+      class="img-fluid rounded z-depth-1"
+    %}
+  </div>
+
+  <div class="col-sm-8 mt-3 mt-md-4">
+    {% include figure.liquid 
+      loading="lazy" 
+      path="assets/img/bmi_vs_charges.jpg" 
+      title="scatterplot" 
+      class="img-fluid rounded z-depth-1"
+    %}
+  </div>
+</div>
+
+<div class="caption text-center mt-2">
+    Figura 1. Arriba: Boxplot representado charges si el usuario es fumador o no | Abajo: Mapa de puntos represando el IMC vs gastos si el usuario es fumador o no fumador.
+</div>
+
+- Relaciones clave: se exploró visualmente la relación entre variables como edad, BMI y costo del seguro para detectar tendencias o comportamientos relevantes. 
+
+Este análisis permitió identificar los factores con mayor impacto en los costos y guiar la construcción de los modelos predictivos.
+
+### 2. Procesamiento y preparación de los datos
+
+Con el propósito de asegurar que los modelos de Machine Learning funcionaran de manera óptima, se aplicaron las siguientes transformaciones y pasos de preparación:
+
+- Codificación de variables categóricas: se utilizó One-Hot Encoding para convertir las categorías de variables como sex, smoker y region en variables numéricas.
+- División del dataset: el conjunto de datos se dividió en datos de entrenamiento (80%) y prueba (20%) para evaluar el rendimiento real de los modelos.
+- Estandarización de características: se aplicó StandardScaler a las variables numéricas para normalizar su escala, lo cual mejora el desempeño de modelos como Regresión Lineal y K-Nearest Neighbors.
+- Eliminación y manejo de outliers: se identificaron valores extremos mediante boxplots; debido a que algunos outliers son representativos, especialmente para la columna charges, se conservaron para no perder información relevante. 
+- Construcción de matrices de características **x** y objetivo **y**: se organizo el dataset en variables predictoras y la variable charges a predecir. 
+
+Esta etapa dejó el data set preparado para entrenar los modelos de predicción, asegurando coherencia y calidad en los datos utilizados. 
+</div>
+
+## Modelos 
+## Resultados 
