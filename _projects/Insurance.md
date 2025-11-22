@@ -128,7 +128,5 @@ Con el propósito de asegurar que los modelos de Machine Learning funcionaran de
 - Construcción de matrices de características **x** y objetivo **y**: se organizo el dataset en variables predictoras y la variable charges a predecir. 
 
 Esta etapa dejó el data set preparado para entrenar los modelos de predicción, asegurando coherencia y calidad en los datos utilizados. 
-</div>
 
-## Modelos 
-## Resultados 
+</div>
