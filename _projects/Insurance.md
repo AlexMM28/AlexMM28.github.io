@@ -10,18 +10,18 @@ giscus_comments: true
 
 ## DATASET
 
-<div class="text-justify">
-{:markdown="1"}
+<div class="text-justify" markdown="1">
 
 El dataset utilizado en este proyecto proviene de la plataforma Kaggle y contiene información sobre características demográficas, hábitos y factores médicos relacionados con el costo de seguros de salud.  
 Puedes consultarlo en la siguiente dirección dando click [aquí](https://www.kaggle.com/datasets/mosapabdelghany/medical-insurance-cost-dataset){:target="_blank" rel="noopener noreferrer"}
 
 </div>
 
+<hr>
+
 ## Descripción del proyecto
 
-<div class="text-justify">
-{:markdown="1"}
+<div class="text-justify" markdown="1">
 
 Este proyecto consiste en analizar y modelar el costo de los seguros médicos utilizando técnicas de Ciencia de Datos y Machine Learning. A partir del dataset **Insurance**, que incluye información como edad, índice de masa corporal (BMI), número de hijos, tabaquismo, sexo y región, se desarrolla un proceso completo que abarca desde el análisis exploratorio de datos (EDA) hasta la implementación de modelos predictivos.
 
@@ -39,6 +39,8 @@ Este proyecto forma parte del portafolio de Ciencia de Datos y tiene como finali
 
 </div>
 
+<hr>
+
 ## Metodología 
 
 <div class="text-justify" markdown="1">
@@ -53,27 +55,21 @@ Las actividades principales fueron:
 - Visualización de distribuciones: histogramas y boxplots para identificar la forma de las distribuciones y posibles valores atípicos. 
 
 <div class="row justify-content-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid 
-      loading="lazy" 
-      path="assets/img/histograms1.jpg" 
-      title="histograma" 
-      class="img-fluid rounded z-depth-1"
-    %}
-  </div>
-
   <div class="col-sm-8 mt-3 mt-md-4">
-    {% include figure.liquid 
-      loading="lazy" 
-      path="assets/img/boxplots1.jpg" 
-      title="boxplot" 
-      class="img-fluid rounded z-depth-1"
-    %}
+    {% include figure.liquid loading="eager" path="assets/img/histograms1.jpg" title="Histograma" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
-
 <div class="caption text-center mt-2">
-    Figura 1. Arriba: Histogramas de distribuciones de las varibles: Age, BMI, Children y Charges | Abajo: Boxplots de las vairbles: Age, BMI, Children y Charges
+    Figura 1. Arriba: Histogramas de distribuciones de las varibles: Age, BMI, Children y Charges
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-sm-8 mt-3 mt-md-4">
+    {% include figure.liquid loading="eager" path="assets/img/boxplots.jpg" title="Boxplot" class="img-fluid rounded z-depth-1" %}
+  </div>
+</div>
+<div class="caption text-center mt-2">
+    Figura 2. Boxplots de las variables: Age, BMI, Children y Charges.
 </div>
 
 - Análisis de correlación: se generó un mapa de calor (heatmap) paara conocer las relaciones entre variables númericas, destacando la fuerte relación entre el tabaquismo y el costo del seguro. 
@@ -110,7 +106,7 @@ Las actividades principales fueron:
 </div>
 
 <div class="caption text-center mt-2">
-    Figura 1. Arriba: Boxplot representado charges si el usuario es fumador o no | Abajo: Mapa de puntos represando el IMC vs gastos si el usuario es fumador o no fumador.
+    Figura 3. Arriba: Boxplot representado charges si el usuario es fumador o no | Abajo: Mapa de puntos represando el IMC vs gastos si el usuario es fumador o no fumador.
 </div>
 
 - Relaciones clave: se exploró visualmente la relación entre variables como edad, BMI y costo del seguro para detectar tendencias o comportamientos relevantes. 
