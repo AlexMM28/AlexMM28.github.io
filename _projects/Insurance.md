@@ -59,8 +59,6 @@ print(df.info())
 print(df.describe())
 print(df.isnull().sum())
 ```
-<figcaption>Parte 1/4. Importación de librerías en Python.</figcaption>
-
 - Visualización de distribuciones: histogramas y boxplots para identificar la forma de las distribuciones y posibles valores atípicos. 
 
 <div class="row justify-content-center">
@@ -133,7 +131,21 @@ Este análisis permitió identificar los factores con mayor impacto en los costo
 Con el propósito de asegurar que los modelos de Machine Learning funcionaran de manera óptima, se aplicaron las siguientes transformaciones y pasos de preparación:
 
 - Codificación de variables categóricas: se utilizó One-Hot Encoding para convertir las categorías de variables como sex, smoker y region en variables numéricas.
+
+```python
+df_encoded = pd.get_dummies(df, drop_first=True)
+```
 - División del dataset: el conjunto de datos se dividió en datos de entrenamiento (80%) y prueba (20%) para evaluar el rendimiento real de los modelos.
+
+```python
+# Escalada de variables 
+
+from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+x_train_scaled = scaler.fit_transform(x_train)
+x_test_scaled = scaler.transform(x_test)
+```
 - Estandarización de características: se aplicó StandardScaler a las variables numéricas para normalizar su escala, lo cual mejora el desempeño de modelos como Regresión Lineal y K-Nearest Neighbors.
 - Eliminación y manejo de outliers: se identificaron valores extremos mediante boxplots; debido a que algunos outliers son representativos, especialmente para la columna charges, se conservaron para no perder información relevante. 
 - Construcción de matrices de características **x** y objetivo **y**: se organizo el dataset en variables predictoras y la variable charges a predecir. 
