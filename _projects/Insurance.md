@@ -51,6 +51,16 @@ La metodología aplicada en este proyecto sigue un flujo de trabajo típico de C
 Se realizó un análisis exploratorio completo con el objetivo de comprender la estructura del dataset y detectar patrones relevantes en las variables.
 Las actividades principales fueron: 
 - Revisión inicial del dataset: dimensiones, tipos de datos, valores faltantes y estadísticas descriptivas.
+
+```python
+df = pd.read_csv("insurance.csv")
+print(df.head())
+print(df.info())
+print(df.describe())
+print(df.isnull().sum())
+```
+<figcaption>Parte 1/4. Importación de librerías en Python.</figcaption>
+
 - Visualización de distribuciones: histogramas y boxplots para identificar la forma de las distribuciones y posibles valores atípicos. 
 
 <div class="row justify-content-center">
@@ -74,7 +84,7 @@ Las actividades principales fueron:
 </div>
 
 <div class="caption text-center mt-2">
-    Figura 3. Arriba: Histogramas de distribuciones de las varibles: Age, BMI, Children y Charges  | Abajo: Boxplots de las variables: Age, BMI, Children y Charges.
+    Figura 1. Arriba: Histogramas de distribuciones de las varibles: Age, BMI, Children y Charges  | Abajo: Boxplots de las variables: Age, BMI, Children y Charges.
 </div>
 
 - Análisis de correlación: se generó un mapa de calor (heatmap) paara conocer las relaciones entre variables númericas, destacando la fuerte relación entre el tabaquismo y el costo del seguro. 
