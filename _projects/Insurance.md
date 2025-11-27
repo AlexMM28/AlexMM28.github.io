@@ -166,3 +166,89 @@ x_test_scaled = scaler.transform(x_test)
 Esta etapa dejó el data set preparado para entrenar los modelos de predicción, asegurando coherencia y calidad en los datos utilizados. 
 
 </div>
+
+## Modelos 
+
+<div class="text-justify" markdown="1">
+
+En este proyecto se implementaron tres modelos supervisados de regresión: **Regresión lineal**, **Árbol de Decisión** y **K-Nearest Neighbors.**
+Cada uno ofrece un enfoque distinto para predecir el costo de los seguros médicos con base a las características demográficas y de salud, permitiendo comparar su desempeño y comprender mejor cómo cada técnica captura las relaciones presentes en los datos.
+
+### 1. Regresión lineal 
+
+La **Regresión Lineal** es uno de los modelos más utilizados en problemas de predicción númerica. Busca encontrar una relación lineal entre las variables independientes (edad, BMI, número de hijos y región) y la variable objetivo que es charges.
+
+El modelo estima una ecuación del tipo: 
+
+$$
+y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_n x_n
+$$
+
+
+**¿Por qué utilizarla aquí?**
+- Permite identificar qué variables influyen más en el costo del seguro mediante sus coeficientes.
+- Sirve como línea de base simple para comparar con modelos más complejos.
+- Funciona bien cuando las relaciones entre variables son aproximadamente lineales, como ocurren en ciertos segmentos del dataset (edad y BMI muestran tendencias claras con respecto al costo).
+
+**Ventajas**
+- Fácil interpretación.
+- Entrenamiento rápido. 
+- Buena para explicar relaciones entre variables. 
+
+<br>
+
+### 2. Árbol de Decisión (Decesion Tree Regressor)
+
+El modelo de **Árbol de Decisión** divide recursivamente los datos en segmentos basados en reglas del tipo: 
+
+> "Si BMI > 30 y el paciente es fumador, entonces el costo tiende a ser alto"
+
+Este modelo no busca una relación lineal, sino que aprende reglas y patrones complejos que describen los datos.
+
+**¿Por qué utilizarlo?**
+- Captura relaciones no líneales entre variables.
+- Permite modelar interacciones naturales en el dataset. Por ejemplo: fumador + BMI Alto → costos muy elevados.
+- Es fácil de visualizar y explicar con reglas. 
+
+**Ventajas** 
+- No requiere escalado de variables. 
+- Interprete mediante su estructura en forma de árbol.
+- Capaz de capturar relaciones complejas que la regresión lineal no puede identificar. 
+
+<br>
+
+### 3. K-Nearest Neighbors 
+
+El modelo **K-Nearest Neighbors** predice el costo del seguro basándose en los valores de los **k vecinos** más cercanos en el espacio de variables. 
+
+Ejemplo: 
+
+> Para un paciente nuevo, busca otros pacientes similares (vecinos) y promedia sus costos.
+
+**¿Por qupe utilizarlo?**
+
+- Funciona muy bien para patrones complejos que no siguen reglas lineales. 
+- Es un modelo basado en similitud: ideal para datasets donde personas con características similares tienden a tener costos parecidos.
+- Permite evaluar cómo las distancias entre caracter´siticas influyen en la predicción.
+
+**REQUISITO IMPORTANTE**
+
+El dataset debe estar escalado, es por eso que se usó *StandardScaler*, debido a que K-Nearest Neighbors depende de distancias y variables con diferentes unidades podrían sesgar el cálculo.
+
+**Ventajas**
+- No asume ninguna forma funcional del modelo.
+- Puede lograr alto desmpeño con datos bien procesados.
+- Ideal para comparar con modelos basados en regalas o ecuaciones.
+
+<br>
+
+### Conclusiones del uso de los modelos Regresión Lineal, Árbol de decisiones y K-Nearest Neighbors
+
+El uso de estos 3 modelos permite: 
+- Obetener una visión líneal de la relación entre características y costos (**Regresión Lineal**)
+- capturar reglas no lineales y comportamientos excepcionales (**Árbol de Decisión**).
+- Predecir costos basandose en patrones de similitud entre pacientes (**K-Nearest Neighbors**)
+
+Esta combinación ofrece un análisis robusto y completo del comportamiento del dataset, permitiendo identificar qué metodos funcionan mejor en la predicción del costo real de los seguros médicos.
+
+</div>
