@@ -167,12 +167,16 @@ Esta etapa dejó el data set preparado para entrenar los modelos de predicción,
 
 </div>
 
+<hr>
+
 ## Modelos 
 
 <div class="text-justify" markdown="1">
 
 En este proyecto se implementaron tres modelos supervisados de regresión: **Regresión lineal**, **Árbol de Decisión** y **K-Nearest Neighbors.**
 Cada uno ofrece un enfoque distinto para predecir el costo de los seguros médicos con base a las características demográficas y de salud, permitiendo comparar su desempeño y comprender mejor cómo cada técnica captura las relaciones presentes en los datos.
+
+<hr>
 
 ### 1. Regresión lineal 
 
@@ -195,7 +199,7 @@ $$
 - Entrenamiento rápido. 
 - Buena para explicar relaciones entre variables. 
 
-<br>
+<hr>
 
 ### 2. Árbol de Decisión (Decesion Tree Regressor)
 
@@ -215,7 +219,7 @@ Este modelo no busca una relación lineal, sino que aprende reglas y patrones co
 - Interprete mediante su estructura en forma de árbol.
 - Capaz de capturar relaciones complejas que la regresión lineal no puede identificar. 
 
-<br>
+<hr>
 
 ### 3. K-Nearest Neighbors 
 
@@ -240,7 +244,7 @@ El dataset debe estar escalado, es por eso que se usó *StandardScaler*, debido 
 - Puede lograr alto desmpeño con datos bien procesados.
 - Ideal para comparar con modelos basados en regalas o ecuaciones.
 
-<br>
+<hr>
 
 ### Conclusiones del uso de los modelos Regresión Lineal, Árbol de decisiones y K-Nearest Neighbors
 
