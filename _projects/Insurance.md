@@ -8,6 +8,9 @@ category: Ciencia de Datos
 giscus_comments: true
 ---
 
+* TOC
+{:toc}
+
 ## DATASET
 
 <div class="text-justify" markdown="1">
@@ -229,7 +232,7 @@ Ejemplo:
 
 > Para un paciente nuevo, busca otros pacientes similares (vecinos) y promedia sus costos.
 
-**¿Por qupe utilizarlo?**
+**¿Por qué utilizarlo?**
 
 - Funciona muy bien para patrones complejos que no siguen reglas lineales. 
 - Es un modelo basado en similitud: ideal para datasets donde personas con características similares tienden a tener costos parecidos.
@@ -242,15 +245,15 @@ El dataset debe estar escalado, es por eso que se usó *StandardScaler*, debido 
 **Ventajas**
 - No asume ninguna forma funcional del modelo.
 - Puede lograr alto desmpeño con datos bien procesados.
-- Ideal para comparar con modelos basados en regalas o ecuaciones.
+- Ideal para comparar con modelos basados en reglas o ecuaciones.
 
 <hr>
 
 ### Conclusiones del uso de los modelos Regresión Lineal, Árbol de decisiones y K-Nearest Neighbors
 
 El uso de estos 3 modelos permite: 
-- Obetener una visión líneal de la relación entre características y costos (**Regresión Lineal**)
-- capturar reglas no lineales y comportamientos excepcionales (**Árbol de Decisión**).
+- Obtener una visión líneal de la relación entre características y costos (**Regresión Lineal**)
+- Capturar reglas no lineales y comportamientos excepcionales (**Árbol de Decisión**).
 - Predecir costos basandose en patrones de similitud entre pacientes (**K-Nearest Neighbors**)
 
 Esta combinación ofrece un análisis robusto y completo del comportamiento del dataset, permitiendo identificar qué metodos funcionan mejor en la predicción del costo real de los seguros médicos.
