@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Portafolio
+title: Proyectos
 permalink: /portafolio/
 description: Proyectos acádemicos y personales
 nav: true
