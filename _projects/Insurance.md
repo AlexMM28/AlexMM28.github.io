@@ -31,7 +31,7 @@ Los objetivos específicos del proyecto son:
 - Comprender la estructura del dataset y analizar las relaciones entre variables por medio de visualizaciones estadísticas.
 - Aplicar una adecuada preparación de datos mediante codificación de variables categóricas, estandarización y división de datos en entrenamiento y prueba.
 - Construir distintos modelos de Machine Learning (Regresión Lineal, Árbol de Decisión y K-Nearest Neighbors) para analizar y comparar su desempeño predictivo.
-- Evaluar los modelos utilizando métricas como MAE, MSE y R².
+- Evaluar los modelos utilizando métricas como R² y MAE.
 - Identificar las variables que más influyen en la determinación del costo del seguro.
 
 Este proyecto forma parte del portafolio de Ciencia de Datos y tiene como finalidad demostrar habilidades en análisis exploratorio, preprocesamiento de datos, modelado predictivo y comunicación de resultados.
@@ -254,5 +254,135 @@ El uso de estos 3 modelos permite:
 - Predecir costos basandose en patrones de similitud entre pacientes (**K-Nearest Neighbors**)
 
 Esta combinación ofrece un análisis robusto y completo del comportamiento del dataset, permitiendo identificar qué metodos funcionan mejor en la predicción del costo real de los seguros médicos.
+
+</div>
+
+<hr>
+
+## Resultados
+
+<div class="text-justify" markdown="1">
+
+Los resultados del proyecto se basan en la comparación del desempeño de tres modelos de regresión: **Regresión Lineal, Árbol de Decisión y K-Nearest Neighbors.** Para evaluar cada modelo, primero se prepararon los datos adecuadamente y después se calcularon métricas de desempeño como **R² y MAE**, que permiten medir qué tan bien cada algortimo logra predecir el costo del seguro.
+
+A continuación se muestra el desempeño de cada algoritmo después del entrenamiento y evaluación sobre los datos prueba. 
+
+### 1. Regresión Lineal 
+
+La Regresión Lineal busca establecer la relación entre variables predictoras y el costo del seguro mediante una combinación lineal de las caracteristicas. 
+
+**Métricas obtenidas:**
+-**R²**: Mide la proporción de variabilidad explicada por el modelo.
+-**MAE**: Mide el error absoluto promedio
+
+
+```python
+# Regresión Lineal
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+
+lr = LinearRegression()
+lr.fit(x_train_scaled, y_train)
+y_pred_lr = lr.predict(x_test_scaled)
+
+print('Linear Regression:')
+print(f'MAE: {mean_absolute_error(y_test, y_pred_lr)}')
+print(f'MSE: {mean_squared_error(y_test, y_pred_lr)}')
+print(f'R2: {r2_score(y_test, y_pred_lr)}')
+```
+El modelo de Regresión Lineal obtuvo: 
+- **R²**: 0.7836
+- **MAE**: 4181.19
+
+Este desempeño indica que el modelo logra explicar alrededor del 78% de la variabilidad del costo del seguro médico a partir de las variables predictoras. Sin embargo, su MAE es el más alto de los tres modelos, lo cual significa que, aunque el modelo captura bien la tendencia general de los datos, tiene dificultades para oredecir casos con valores extremos, por ejemplo, costos muy altos asociados con tabaquísmo o alto BMI.
+
+Esto es coherente con que la Regresión Lineal asume relaciones lineales y no se ajusta de manera optima a relaciones no lineales presentes en el dataset.
+
+<hr>
+
+### 2. Decision Tree (Árbol de Decisión)
+
+Este modelo divide los datos en nodos basados en reglas que intentan separar grupos con costos similares. 
+
+Es útil porque detecta relaciones no lineales sin requerir el escalado de variables.
+
+```python
+# Arbol de decisión 
+from sklearn.tree import DecisionTreeRegressor
+
+tree = DecisionTreeRegressor(max_depth=5, random_state=42)
+tree.fit(x_train, y_train)
+
+y_pred_tree = tree.predict(x_test)
+
+print('Decision Tree:')
+print(f'MAE: {mean_absolute_error(y_test, y_pred_tree)}')
+print(f'MSE: {mean_squared_error(y_test, y_pred_tree)}')
+print(f'R2: {r2_score(y_test, y_pred_lr)}')
+```
+
+El modelo mostro: 
+- **R²**: 0.7836
+- **MAE**: 2930.77
+
+Su R² es exactamente igual al de la Regresión Lineal, pero presenta un MAE mucho menor, lo que indica que este modelo logra ajustarse mejor a patrones no lineales y reduce significativamente el error promedio de sus predicciones. 
+
+Los Árboles de Decisión suelen capturar interacciones entre variables y divisiones complejas dentro de los datos, lo que explica su superioridad en MAE. Sin embargo, este tipo de modelo puede sobreajustar si no se regula, aunque en este caso su R² es moderado y consistente.
+
+<hr>
+
+### 3. K-Nearest Neighbors
+
+ K-Nearest Neighbors predice el costo del seguro básandose en la información de los **k** individuos más cercanos en el espacio de características. 
+
+ Para este modelo, la normalizació fue escencial para evitar sesgos por escala.
+
+```python
+# K-Nearest Neighbors 
+from sklearn.neighbors import KNeighborsRegressor
+
+knn = KNeighborsRegressor(n_neighbors=5)
+knn.fit(x_train_scaled, y_train)
+
+y_pred_knn = knn.predict(x_test_scaled)
+
+print("KNN:")
+print("MAE:", mean_absolute_error(y_test, y_pred_knn))
+print("MSE:", mean_squared_error(y_test, y_pred_knn))
+print("R2:", r2_score(y_test, y_pred_knn))
+```
+
+El modelo mostro: 
+- **R²**: 0.8038 (**El más alto**)
+- **MAE**: 3494.75
+
+Este modelo es el que mejor explica la variabilidad del costo del seguro, alcanzando un R² superior al 80%. El MAE, aunque mayor que el del Árbol de Decisión, sigue siendo considerablemente más bajo que el de la Regresión Lineal. 
+
+K-Nearest Neighbors tiende a funcionar muy bien cuando hay relaciones complejas entre variables y cuando los datos han sido correctamente estandarizados. Su alto R² indica que logra capturar patrones fines en los datos basándose en vecindades locales.
+
+La gráfica siguiente presenta de forma visual los valores de **MAE** y **R²** para cada modelado evaluado.
+
+<div class="row justify-content-center">
+  <div class="col-sm-8 mt-3 mt-md-4">
+    {% include figure.liquid loading="eager" path="assets/img/error_models.jpg" title="Error de modelos" class="img-fluid rounded z-depth-1" %}
+  </div>
+</div>
+<div class="caption text-center mt-2">
+    Figura 4. Izquierda: Histograma de error MAE por cada modelo. | Derecha: Histograma de error R² por cada modelo.
+</div>
+
+</div>
+
+<hr>
+
+## Conclusiones
+
+<div class="text-justify" markdown="1">
+
+
+En conjunto, los resultados muestran que los modelos **no lineales** superan claramente a la Regresión Lineal, lo que sugiere que la relación entre las variables del dataset y el costo del seguro **no es lineal**.
+**K-Nearest Neighbors** es el modelo con mejor capacidad explicativa (mayor valor de R²), lo que significa que es el que mejor captura los patrones generales del costo de los seguros, por otro lado, **Decision Tree** es el modelo más preciso segpun el MAE, ya que comete el menor error promedio en las predicciones.
+
+Los resultados permiten concluir que el dataset presentan relaciones complejas y no líneales, lo cual hace que modelos basados en vecinos o decisiones sean más adecuados que modelos lineales tradicionales.
 
 </div>
