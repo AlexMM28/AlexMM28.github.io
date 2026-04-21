@@ -23,7 +23,7 @@ latest_posts:
 
 # ¡Hola! 
 
-Bienvenidos a mi página web. Mi nombre es **Alejandro Maldonado Medina** y soy egresado de la **Licenciatura en Geociencias con área de profundización en Geofísica Aplicada** por la **ENES Morelia, UNAM**.  
+Bienvenidos a mi página web. Mi nombre es **Alejandro Maldonado Medina** y soy  **Licenciado en Geociencias con área de profundización en Geofísica Aplicada** por la **ENES Morelia, UNAM**.  
 
 He participado en **proyectos de exploración geofísica**, con especial interés en los **metodos de prospección geofísica** para el estudio y caracterización del subsuelo. Actualmente también me desempeño como **científico de datos**, aplicando herramientas como **Python, pandas, NumPy, Matplotlib scikit-learn, QGIS, SQL** y técnicas de **machine learning** para el **análisis espacial, modelado predictivo y visualización de datos**.  
 
