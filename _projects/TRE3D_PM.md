@@ -11,6 +11,8 @@ related_publications: false
 * TOC
 {:toc}
 
+Si deseas leer el texto o trabajo completo da click [aquí](https://tesiunamdocumentos.dgb.unam.mx/ptd2026/ene_mar/0883173/Index.html)
+
 ## Resumen
 
 <div class="text-justify" markdown="1">
@@ -386,6 +388,18 @@ En conclusión, este trabajo demuestra que la tomografía de resistividad eléct
 <hr>
 
 ## Agradecimientos
+
+<div class="text-justify" markdown="1">
+
+A mi tutor, el Dr.Gerardo Cifuentes Nava, y a mi cotutor, el Dr. Miguel Ángel Cervantes Solano, por su guía, paciencia y por compartir su conocimiento y experiencia a lo largo del desarrollo deesta investigación. 
+
+Un agradecimiento especial al equipo de trabajo de campo en el Palacio de Minería, integrado por los investigadores: Dr. Gerardo Cifuentes, Dra. Ana Caccavari, M.C. David Escobedo  Zenil  y  el  Ing.  José  Antonio  Martínez;  su  apoyo  técnico, experienciay conocimiento fue fundamentalpara la obtención de los datos de esta tesis.
+
+A mis colegas ycompañeros de la carrera de Ingeniería Geofísica de la Facultad de Ingeniería: Cristobal, Isabel y Alejandro, por el compañerismo y el apoyo mutuo durante esté trabajo en el Palacio de Minería.
+
+A la gerencia del Palacio de Minería por el apoyo y facilidades prestadas para poder realizar este proyecto.
+
+
 
 <hr>
 
