@@ -11,7 +11,7 @@ related_publications: false
 * TOC
 {:toc}
 
-Si deseas leer el texto o trabajo completo da click [aquí](https://tesiunamdocumentos.dgb.unam.mx/ptd2026/ene_mar/0883173/Index.html)
+Si deseas leer el trabajo completo da click [aquí](https://tesiunamdocumentos.dgb.unam.mx/ptd2026/ene_mar/0883173/Index.html)
 
 ## Resumen
 
