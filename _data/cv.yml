@@ -1,8 +1,8 @@
 basics:
-  name: "Alejandro Prueba 1"
+  name: "Alejandro Maldonado Medina"
   label: "Geofísico | Científico y Analista de Datos"
   email: "alejamm28@gmail.com"
-  url: "https://www.linkedin.com/in/alejandro-maldonado-medina/"
+  url: ""
   summary: >
     Soy Licenciado en Geociencias con área de profundización en
     geofísica aplicada por la ENES Morelia, UNAM. He participado en proyectos de
@@ -107,7 +107,7 @@ projects:
     summary: >
       Creación de base de datos de características químicas y físicas de acuíferos
       y un mapa interactivo de las provincias geotérmicas de México.
-    url: "http://geotermia.geofisica.unam.mx/"
+    url: ""
 
 languages:
   - language: "Español"
