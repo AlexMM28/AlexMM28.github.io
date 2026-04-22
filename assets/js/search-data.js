@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-cv",
           title: "CV",
-          description: "Curriculum vitae de Alejandro Maldonado Medina.",
+          description: "Curriculum Vitae de Alejandro Maldonado Medina.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
