@@ -2,7 +2,7 @@ basics:
   name: "Alejandro Maldonado Medina"
   label: "Geofísico | Científico de Datos | Analista de Datos"
   email: "alejamm28@gmail.com"
-  url: ""
+  url: "https://www.linkedin.com/in/alejandro-maldonado-medina/"
   summary: >
     Soy Licenciado en Geociencias con área de profundización en
     geofísica aplicada por la ENES Morelia, UNAM. He participado en proyectos de
@@ -40,7 +40,7 @@ volunteer:
     startDate: "2025-10-16"
     endDate: "2025-10-17"
     summary: >
-      Presentación en inglés del trabajo Tomografía de Resistividad Eléctrica 3D en el Palacio de Minería, Ciudad de México en foro académico especializado,
+      Ganador del segundo lugar por la Presentación en inglés del trabajo Tomografía de Resistividad Eléctrica 3D en el Palacio de Minería, Ciudad de México en foro académico especializado,
       destacando aplicaciones geofísicas y resultados.
 
     
@@ -107,7 +107,7 @@ projects:
     summary: >
       Creación de base de datos de características químicas y físicas de acuíferos
       y un mapa interactivo de las provincias geotérmicas de México.
-    url: ""
+    url: "http://geotermia.geofisica.unam.mx/"
 
 languages:
   - language: "Español"
