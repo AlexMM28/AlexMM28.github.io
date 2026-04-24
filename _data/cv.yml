@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 cv:
   name: Albert Einstein
   label: Scientist
@@ -7,19 +6,7 @@ cv:
   image: ""
   summary: A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time
 =======
-basics:
-  name: "Alejandro Maldonado Medina"
-  label: "Geofísico | Ciencia de Datos | Analista de Datos"
-  email: "alejamm28@gmail.com"
-  url: "https://www.linkedin.com/in/alejandro-maldonado-medina/"
-  summary: >
-    Soy Licenciado en Geociencias con área de profundización en
-    geofísica aplicada por la ENES Morelia, UNAM. He participado en proyectos de
-    exploración geofísica y actualmente me desempeño también como científico de
-    datos, aplicando herramientas como Python, pandas, NumPy, scikit-learn,
-    QGIS, SQL y técnicas de aprendizaje automático para el análisis espacial,
-    modelado predictivo y visualización de datos.
->>>>>>> b51c7567518adbbae7a9678dd88906f058b63b74
+
 
   social_networks:
     - network: X
