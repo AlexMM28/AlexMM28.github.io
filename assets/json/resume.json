@@ -1,10 +1,10 @@
 {
   "basics": {
     "name": "Alejandro Maldonado Medina",
-    "label": "Geofísico | Científico de Datos",
+    "label": "Licenciado en Geociencias con área de profundización en Geofísica Aplicada | Ciencia de Datos | Analista de Datos",
     "email": "alejamm28@gmail.com",
     "url": "https://www.linkedin.com/in/alejandro-maldonado-medina/",
-    "summary": "Soy egresado de la Licenciatura en Geociencias con área de profundización en geofísica aplicada por la ENES Morelia, UNAM. He participado en proyectos de exploración geofísica y actualmente me desempeño también como científico de datos, aplicando herramientas como Python, pandas, NumPy, scikit-learn, QGIS, SQL y técnicas de aprendizaje automático para el análisis espacial, modelado predictivo y visualización de datos."
+    "summary": "Soy Licenciado en Geociencias con área de profundización en geofísica aplicada por la ENES Morelia, UNAM. He participado en proyectos de exploración geofísica y actualmente me desempeño también como científico de datos, aplicando herramientas como Python, pandas, NumPy, scikit-learn, QGIS, SQL y técnicas de aprendizaje automático para el análisis espacial, modelado predictivo y visualización de datos."
   },
   "education": [
     {
@@ -29,20 +29,28 @@
       "organization": "Segundo Encuentro de Estudiantes de Geociencias",
       "location": "Morelia, Michoacán",
       "position": "Expositor",
-      "date": "2023-05-01",
+      "date": "Mayo 2023",
       "summary": "Presentador de póster científico 'Análisis del comportamiento térmico del subsuelo en el campo geotérmico de Los Azufres, Michoacán mediante registros sísmicos y geofísicos de pozos.'"
+    },
+    {
+      "organization": "Sexta Conferencia Virtual de Estudiantes de América Latina SEG (Society of Exploration Geophysicists",
+      "location": "Virtual",
+      "position": "Expositor",
+      "startDate": "2025-10-16",
+      "endDate": "2025-10-17",
+      "summary": "Ganador del segundo lugar por la presentación en inglés del trabajo Tomografía de Resistividad Eléctrica 3D en el Palacio de Minería, Ciudad de México en foro académico especializado, destacando aplicaciones geofísicas y resultados."
     }
   ],
   "certificates": [
     {
-      "name": "Análisis de Datos Sísmicos Nivel Básico",
+      "name": "Análisis de Datos Sísmicos Nivel Básico. FOLIO: 1429",
       "date": "Enero 2023",
       "issuer": "Instituto de Geofísica UNAM",
       "url": "https://sigeco.cuaieed.unam.mx/valida.php",
       "icon": "fa-solid fa-globe"
     },
     {
-      "name": "Análisis de Datos Sísmicos Nivel Avanzado",
+      "name": "Análisis de Datos Sísmicos Nivel Avanzado. FOLIO: 1370",
       "date": "Enero 2023",
       "issuer": "Instituto de Geofísica UNAM",
       "url": "https://sigeco.cuaieed.unam.mx/valida.php",
@@ -102,8 +110,9 @@
   "projects": [
     {
       "name": "Tomografía de resistividad eléctrica 3D en el Palacio de Minería, Ciudad de México",
-      "summary": "Generación de un modelo 3D con base a la TRE en el patio central del Palacio de Minería, para analizar y caracterizar las anomalías estructurales y geológicas del edificio.",
-      "highlights": ["TRE 3D", "Palacio de Minería", "Subsidencia"]
+      "summary": "Generar un modelo tridimensional del subsuelo del patio central del Palacio de Minería para localizar y caracterizar las anomalías estructurales del subsuelo y de los cimientos y encontrar la relación con el hundimiento diferencial del edifico",
+      "highlights": ["TRE-3D", "Palacio de Minería", "Exploración Geofísica", "Arqueología"],
+      "url": "https://tesiunam.dgb.unam.mx/F/QJ58S2EPKEMRRVUVAAC16MQUGLDIKPCIHA8E7K13MLHXTCLHA5-19583?func=service&doc_library=TES01&doc_number=000883173&line_number=0001&func_code=WEB-FULL&service_type=MEDIA"
     },
     {
       "name": "Mapa interactivo de la Geotermia en México (Servicio Social)",
