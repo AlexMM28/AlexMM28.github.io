@@ -1,101 +1,118 @@
 cv:
-  name: Alejandro Maldonado Medina
-  label: Geofísico | Científico de Datos
-  email: alejamm28@gmail.com
-  location: Morelia, Michoacán, México
-  image: ""
-  summary: "Soy egresado de la Licenciatura en Geociencias con área de profundización en geofísica aplicada por la ENES Morelia, UNAM. He participado en proyectos de exploración geofísica y actualmente me desempeño también como científico de datos, aplicando herramientas como Python, pandas, NumPy, scikit-learn, QGIS, SQL y técnicas de aprendizaje automático para el análisis espacial, modelado predictivo y visualización de datos."
+  name: "Alejandro Maldonado Medina"
+  label: "Licenciado en Geociencias con área de profundización en Geofísica Aplicada | Ciencia de Datos | Analista de Datos"
+  email: "alejamm28@gmail.com"
+  url: "https://www.linkedin.com/in/alejandro-maldonado-medina/"
+  summary: >
+    Soy Licenciado en Geociencias con área de profundización en
+    geofísica aplicada por la ENES Morelia, UNAM. He participado en proyectos de
+    exploración geofísica y actualmente me desempeño también como científico de
+    datos, aplicando herramientas como Python, pandas, NumPy, scikit-learn,
+    QGIS, SQL y técnicas de aprendizaje automático para el análisis espacial,
+    modelado predictivo y visualización de datos.
 
-  social_networks:
-    - network: LinkedIn
-      username: alejandro-maldonado-medina
-    - network: GitHub
-      username: AlexMM28
+education:
+  - institution: "ENES Morelia, UNAM"
+    area: "Geociencias"
+    studyType: "Licenciatura"
+    endDate: "2023"
+    summary: "Área de profundización en Geofísica Aplicada."
 
-  sections:
-    Education:
-      - institution: Escuela Nacional de Estudios Superiores Unidad Morelia, UNAM
-        location: Morelia, Michoacán
-        area: Geofísica Aplicada
-        studyType: Licenciatura en Geociencias
-        start_date: 2019
-        end_date: 2023
+volunteer:
+  - organization: "Fiesta de las Ciencias y las Humanidades"
+    position: "Expositor"
+    location: "Morelia, Michoacán"
+    startDate: "2019-10-24"
+    endDate: "2019-10-25"
+    summary: "Exposición sobre el Calendario Cósmico."
+  - organization: "Segundo Encuentro de Estudiantes de Geociencias"
+    position: "Expositor"
+    location: "Morelia, Michoacán"
+    startDate: "2023-05-01"
+    endDate: "2023-05-01"
+    summary: >
+      Presentador de póster científico: "Análisis del comportamiento térmico del
+      subsuelo en el campo geotérmico de Los Azufres, Michoacán mediante registros
+      sísmicos y geofísicos de pozos."
+  - organization: "Sexta Conferencia Virtual de Estudiantes de América Latina SEG (Society of Exploration Geophysicists)"
+    position: "Expositor"
+    location: "Virtual"
+    startDate: "2025-10-16"
+    endDate: "2025-10-17"
+    summary: >
+      Ganador del segundo lugar por la presentación en inglés del trabajo Tomografía de Resistividad Eléctrica 3D en el Palacio de Minería, Ciudad de México en foro académico especializado,
+      destacando aplicaciones geofísicas y resultados.
 
-    Volunteer:
-      - company: Fiesta de las Ciencias y las Humanidades
-        position: Expositor
-        location: Morelia, Michoacán
-        start_date: "2019-10"
-        end_date: "2019-10"
-        summary: "Exposición sobre el Calendario Cósmico"
+    
 
-      - company: Segundo Encuentro de Estudiantes de Geociencias
-        position: Expositor
-        location: Morelia, Michoacán
-        summary: "Presentador de póster científico 'Análisis del comportamiento térmico del subsuelo en el campo geotérmico de Los Azufres, Michoacán mediante registros sísmicos y geofísicos de pozos.'"
+certificates:
+  - name: "Análisis de Datos Sísmicos Nivel Básico. FOLIO: 1429"
+    date: "2023-01-01"
+    issuer: "Instituto de Geofísica UNAM"
+    url: "https://sigeco.cuaieed.unam.mx/valida.php"
+    icon: "fa-solid fa-location-dot"
+  - name: "Análisis de Datos Sísmicos Nivel Avanzado. FOLIO: 1370"
+    date: "2023-01-01"
+    issuer: "Instituto de Geofísica UNAM"
+    url: "https://sigeco.cuaieed.unam.mx/valida.php"
+    icon: "fa-solid fa-globe"
+  - name: "Analyze Data with Python Skill Path"
+    date: "2025-04-01"
+    issuer: "Codecademy"
+    url: "https://www.codecademy.com/profiles/alejamm28/certificates/a91cf883da2f48e2b977577646801c81"
+    icon: "fa-brands fa-python"
+  - name: "How to Clean Data with Python"
+    date: "2025-05-01"
+    issuer: "Codecademy"
+    url: "https://www.codecademy.com/profiles/alejamm28/certificates/e773a003314c1be60da8388a90a77e78"
+    icon: "fa-brands fa-python"
+  - name: "Data Science Foundations"
+    date: "2025-05-01"
+    issuer: "Codecademy"
+    url: "https://www.codecademy.com/profiles/alejamm28/certificates/738a7262ff2b4a49b062c25482dc2549"
+    icon: "fa-brands fa-python"
 
-    Certificates:
-      - name: Data Science Foundations
-        date: "2025-05"
-        issuer: Codecademy
-        url: "https://www.codecademy.com/profiles/alejamm28/certificates/738a7262ff2b4a49b062c25482dc2549"
-        icon: fa-brands fa-python
+skills:
+  - name: "Geofísica"
+    level: "Avanzado"
+    icon: "fa-solid fa-compass"
+    keywords:
+      - "Procesamiento de datos geofísicos"
+      - "Tomografía de resistividad eléctrica"
+      - "GPR (Ground Penetrating Radar)"
+      - "Magnetometría"
+      - "Interpretación de datos geofísicos"
+      - "Manejo de SIG"
+  - name: "Programación"
+    level: "Avanzado"
+    icon: "fa-brands fa-python"
+    keywords:
+      - "Python"
+      - "pandas"
+      - "NumPy"
+      - "scikit-learn"
+      - "QGIS"
+      - "SQL"
+      - "Seaborn"
+      - "Matplotlib"
+      - "Limpieza, transformación y escalado de variables (StandardScaler, MinMaxScaler)"
 
-      - name: How to Clean Data with Python
-        date: "2025-05"
-        issuer: Codecademy
-        url: "https://www.codecademy.com/profiles/alejamm28/certificates/e773a003314c1be60da8388a90a77e78"
-        icon: fa-brands fa-python
+projects:
+  - name: "Tomografía de resistividad eléctrica 3D en el Palacio de Minería, Ciudad de México"
+    summary: >
+      Generación de un modelo 3D con base a la TRE en el patio central del Palacio
+      de Minería, para analizar y caracterizar las anomalías estructurales y
+      geológicas del edificio.
+  - name: "Mapa interactivo de la Geotermia en México (Servicio Social)"
+    summary: >
+      Creación de base de datos de características químicas y físicas de acuíferos
+      y un mapa interactivo de las provincias geotérmicas de México.
+    url: "http://geotermia.geofisica.unam.mx/"
 
-      - name: Analyze Data with Python Skill Path
-        date: "2025-04"
-        issuer: Codecademy
-        url: "https://www.codecademy.com/profiles/alejamm28/certificates/a91cf883da2f48e2b977577646801c81"
-        icon: fa-brands fa-python
-
-      - name: Análisis de Datos Sísmicos Nivel Avanzado
-        date: "2023-01"
-        issuer: Instituto de Geofísica UNAM
-        url: "https://sigeco.cuaieed.unam.mx/valida.php"
-        icon: fa-solid fa-globe
-
-      - name: Análisis de Datos Sísmicos Nivel Básico
-        date: "2023-01"
-        issuer: Instituto de Geofísica UNAM
-        url: "https://sigeco.cuaieed.unam.mx/valida.php"
-        icon: fa-solid fa-globe
-
-    Skills:
-      - name: Geofísica
-        icon: fa-regular fa-circle
-        keywords: "Procesamiento de datos geofísicos, Tomografía de resistividad eléctrica, GPR (Ground Penetrating Radar), Magnetometría, Interpretación de datos geofísicos, Manejo de SIG"
-
-      - name: Programación
-        icon: fa-solid fa-code
-        keywords: "Python, pandas, NumPy, scikit-learn, QGIS, SQL, Seaborn, Matplotlib, Limpieza, transformación y escalado de variables"
-
-    Projects:
-      - name: Tomografía de resistividad eléctrica 3D en el Palacio de Minería
-        summary: "Generación de un modelo 3D con base a la TRE en el patio central del Palacio de Minería, para analizar y caracterizar las anomalías estructurales y geológicas del edificio."
-        highlights:
-          - TRE 3D
-          - Palacio de Minería
-          - Subsidencia
-
-      - name: Mapa interactivo de la Geotermia en México (Servicio Social)
-        url: "http://geotermia.geofisica.unam.mx/"
-        summary: "Creación de base de datos de características químicas y físicas de acuíferos y un mapa interactivo de las provincias geotérmicas de México."
-        highlights:
-          - Geotermia
-          - Geoquímica
-          - Manifestaciones termales
-
-    Languages:
-      - name: Español
-        summary: "Nativo"
-
-      - name: Inglés
-        summary: "Avanzado (C1)"
-
-      - name: Italiano
-        summary: "Básico (A1)"
+languages:
+  - language: "Español"
+    fluency: "Nativo"
+  - language: "Inglés"
+    fluency: "Avanzado (C1)"
+  - language: "Italiano"
+    fluency: "Básico (A1)"
