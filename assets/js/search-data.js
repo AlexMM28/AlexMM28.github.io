@@ -432,16 +432,16 @@ ninja.data = [{
           description: "an other project with a background image and giscus comments",
           section: "Projects",handler: () => {
               window.location.href = "/projects/8_project/";
-            },},{id: "projects-project-9",
-          title: 'project 9',
-          description: "another project with an image 🎉",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/9_project/";
             },},{id: "projects-predicción-del-costo-de-seguros-médicos-con-machine-learning",
           title: 'Predicción del costo de seguros médicos con Machine Learning.',
           description: "Alejandro Maldonado-Medina",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Insurance/";
+            },},{id: "projects-",
+          title: '',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/Retail/";
             },},{id: "projects-tomografía-de-resistividad-eléctrica-en-el-palacio-de-minería-ciudad-de-méxico",
           title: 'Tomografía de Resistividad Eléctrica en el Palacio de Minería, Ciudad de México.',
           description: "Alejandro Maldonado-Medina, Gerardo Cifuentes-Nava, Miguel Cervantes-Solano",
