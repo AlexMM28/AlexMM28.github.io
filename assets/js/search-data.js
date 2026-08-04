@@ -437,9 +437,9 @@ ninja.data = [{
           description: "Alejandro Maldonado-Medina",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Insurance/";
-            },},{id: "projects-",
-          title: '',
-          description: "",
+            },},{id: "projects-predicción-del-costo-de-seguros-médicos-con-machine-learning",
+          title: 'Predicción del costo de seguros médicos con Machine Learning.',
+          description: "Alejandro Maldonado-Medina",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Retail/";
             },},{id: "projects-tomografía-de-resistividad-eléctrica-en-el-palacio-de-minería-ciudad-de-méxico",
