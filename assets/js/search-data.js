@@ -437,8 +437,8 @@ ninja.data = [{
           description: "Alejandro Maldonado-Medina",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Insurance/";
-            },},{id: "projects-predicción-del-costo-de-seguros-médicos-con-machine-learning",
-          title: 'Predicción del costo de seguros médicos con Machine Learning.',
+            },},{id: "projects-reporte-de-caso-optimización-de-retención-de-clientes-con-predicción-churn-y-maximización-de-roi",
+          title: 'Reporte de Caso: Optimización de Retención de Clientes con predicción Churn y Maximización...',
           description: "Alejandro Maldonado-Medina",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Retail/";
