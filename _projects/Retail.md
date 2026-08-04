@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Predicción del costo de seguros médicos con Machine Learning.
+title: "Reporte de Caso: Optimización de Retención de Clientes con predicción Churn y Maximización de ROI"
 description: Alejandro Maldonado-Medina
 img: assets/img/cover_retail.jpg
 importance: 2
