@@ -3,7 +3,7 @@ layout: page
 title: Reporte de caso:  Optimización de Retención de Clientes con predicción Churn y Maximización de ROI
 description: Alejandro Maldonado-Medina
 img: assets/img/6.jpg
-importance: 3
+importance: 2
 category: Ciencia de Datos
 ---
 
