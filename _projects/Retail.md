@@ -57,7 +57,7 @@ En este proyecto, el conjunto original consistía en un registro transaccional c
 <div class="text-justify" markdown="1">
 
 El primer paso consistio en depurar la base de datos para segurarse de que el modelo aprendiera exclusivamnete las transacciones validas que representaran ingresos reales para el negocio.
-- Eliminación de registros incompletos: Se descartaron las filas que carecían de un identificador de cliente (Customer ID), ya que es imposible trazar el comportamiento de abandono sin saber a quién pertenece la compra; además solo se conservaron los valores mayores a cero (> 0) de las columnas *Quantity* y *UnitPrice*, debido a que necesitamos información óptima posteriormente para nuestro modelo. Para ello se ejecuto el siguiente código: 
+- Eliminación de registros incompletos: Se descartaron las filas que carecían de un identificador de cliente (Customer ID), ya que es imposible trazar el comportamiento de abandono sin saber a quién pertenece la compra; además solo se conservaron los valores mayores a cero (> 0) de las columnas **Quantity** y **UnitPrice**, debido a que necesitamos información óptima posteriormente para nuestro modelo. Para ello se ejecuto el siguiente código: 
 
 ```python
 #Visualización de datos nulos en el Data Frame 
@@ -92,11 +92,11 @@ Posteriormente de limpiar y filtrar nuestra base de datos, estos fueron los resu
 
 <div class="text-justify" markdown="1">
 
-Un algoritmo de Machine Learning no puede predecir el abandono a partir de una lista de tickets de compra aislados. En este caso, el conjunto de datos original estaba a nivel transaccional (cada fila representaba un producto dentro de una factura), lo cual imposibilita predecir el comportamiento individual del usuario. Para solucionar esto, se requería tranformar el historial de tickets de compra en perfiles de comportamiento únicos por cliente. Se optó por la metodología *RFM (Recency, Frequency, Monetary),* que es un estándar en la inteligencia de negocios que perfila a los clientes en tres dimensiones claves: 
+Un algoritmo de Machine Learning no puede predecir el abandono a partir de una lista de tickets de compra aislados. En este caso, el conjunto de datos original estaba a nivel transaccional (cada fila representaba un producto dentro de una factura), lo cual imposibilita predecir el comportamiento individual del usuario. Para solucionar esto, se requería tranformar el historial de tickets de compra en perfiles de comportamiento únicos por cliente. Se optó por la metodología **RFM (Recency, Frequency, Monetary),** que es un estándar en la inteligencia de negocios que perfila a los clientes en tres dimensiones claves: 
 
-- *Recency (Recencia):* La cantidad de días transcurridos desde la última compra del cliente. 
-- *Frequency (Frecuencia):* El número total de compras realizadas por el usuario, lo que indica su nivel de lealtad e interacción.
-- *Monetary (Monetario):* El gasto total acumulado a lo largo de su cilo de vida con la empresa 
+- **Recency (Recencia):** La cantidad de días transcurridos desde la última compra del cliente. 
+- **Frequency (Frecuencia):** El número total de compras realizadas por el usuario, lo que indica su nivel de lealtad e interacción.
+- **Monetary (Monetario):** El gasto total acumulado a lo largo de su cilo de vida con la empresa 
 
 Este modelo permite traducir millones de filas de ventas en tres indicadores clave que el algoritmo puede interpretar fácilmente para detectar cuándo un cliente está modificando sus hábitos de consumo y, por ende, en riesgo de fuga.
 
@@ -106,14 +106,14 @@ Este modelo permite traducir millones de filas de ventas en tres indicadores cla
 
 <div class="text-justify" markdown="1">
 
-El progreso de agregación se ejecuto en tres fases estratégicas utilizando la librería *pandas:*
+El progreso de agregación se ejecuto en tres fases estratégicas utilizando la librería **pandas:**
 
-1. *Calculo del valor real:* Primero, se generó una nueva característica calculando el gasto total por línea de producto, multiplicando la cantidad de artículos por su precio unitario.
-2. *Deficnición del horizonte temporal:* Para medir cuánto tiempo había pasado desde la última compra de un cliente, se estableció una fecha de referencia, esto para evitar sesgos; se simulo que le día de hoy era exactamente un día después de la transacción más reciente registrada en todo el conjunto de datos.
-3. *Agregación Multidimensional (Grouping):* Se agrupo toda la información utilizando el identificador único del cliente *(CustomerID)* y se aplicaron funciones de agregación específicas para cada pilar del RFM:
-    - *Recency:* Se calculó la diferencia en días entre la fecha de referencia y la fecha de la última compra del cliente.
-    - *Frequency:* Se contabilizó el número de facturas únicas *(InvoiceNo)* asociadas al cliente, midiendo su recurrencia. 
-    - *Monetary:* Se sumó el total de las ventas generadas por el cliente durante todo su ciclo de vida registrado.
+1. **Calculo del valor real:** Primero, se generó una nueva característica calculando el gasto total por línea de producto, multiplicando la cantidad de artículos por su precio unitario.
+2. **Deficnición del horizonte temporal:** Para medir cuánto tiempo había pasado desde la última compra de un cliente, se estableció una fecha de referencia, esto para evitar sesgos; se simulo que le día de hoy era exactamente un día después de la transacción más reciente registrada en todo el conjunto de datos.
+3. **Agregación Multidimensional (Grouping):** Se agrupo toda la información utilizando el identificador único del cliente **(CustomerID)** y se aplicaron funciones de agregación específicas para cada pilar del RFM:
+    - **Recency:** Se calculó la diferencia en días entre la fecha de referencia y la fecha de la última compra del cliente.
+    - **Frequency:** Se contabilizó el número de facturas únicas **(InvoiceNo)** asociadas al cliente, midiendo su recurrencia. 
+    - **Monetary:** Se sumó el total de las ventas generadas por el cliente durante todo su ciclo de vida registrado.
 
 El código que se implemento para esta transformación fue el siguiente: 
 
@@ -140,11 +140,13 @@ rfm_df.rename(columns={
 
 print(rfm_df.head())
 ```
-|   Recency |   Frequency |   Monetary |
-|----------:|------------:|-----------:|
-|       326 |           1 |   77183.6  |
-|         2 |           7 |    4310    |
-|        75 |           4 |    1797.24 |
-|        19 |           1 |    1757.55 |
-|       310 |           1 |     334.4  |
+
+| Recency | Frequency | Monetary |
+|:---|:---|:---|
+| 326 | 1 | 77183.6 |
+| 2 | 7 | 4310 |
+| 75 | 4 | 1797.24 |
+| 19 | 1 | 1757.55 |
+| 310 | 1 | 334.4 |
+
 </div>
