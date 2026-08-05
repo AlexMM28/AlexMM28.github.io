@@ -138,7 +138,13 @@ rfm_df.rename(columns={
     'Total_Sales': 'Monetary'
 }, inplace=True)
 
-print(rfm_df.head(10))
+print(rfm_df.head())
 ```
-
+|   Recency |   Frequency |   Monetary |
+|----------:|------------:|-----------:|
+|       326 |           1 |   77183.6  |
+|         2 |           7 |    4310    |
+|        75 |           4 |    1797.24 |
+|        19 |           1 |    1757.55 |
+|       310 |           1 |     334.4  |
 </div>
