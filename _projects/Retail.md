@@ -149,4 +149,55 @@ print(rfm_df.head())
 | 19 | 1 | 1757.55 |
 | 310 | 1 | 334.4 |
 
+Al generar esta nueva matriz, obtuvimmos el perfil consodilado de **4338 clientes únicos**. La estadística descriptiva de esta nueva población revela comportamientos muy interesantes para el negocio: 
+
+| Estadística | Recency | Frequency | Monetary |
+| :--- | :--- | :--- | :--- |
+| **count** | 4,338 | 4,338 | 4,338 |
+| **mean** | 92.5 | 4.2 | 2,054.26 |
+| **std** | 100.01 | 7.6 | 8,989.23 |
+| **min** | 1.0 | 1.0 | 3.75 |
+| **25%** | 18.0 | 1.0 | 307.41 |
+| **50%** | 51.0 | 2.0 | 674.48 |
+| **75%** | 142.0 | 5.0 | 1,661.74 |
+| **max** | 374.0 | 209.0 | 280,206.02 |
+
+Al observar la tabla, es evidente que esxiste una dispersión masiva en el gasto **(Monetary)** mientras que el clinete típico (la mediana) gasta $674.48, el valor máximo asciende a más de $280,000. Esta fuerte asimetría nos indicá inmediatamente que los datos crudos van a generar un sesgo a los modelos predictivos hacia los clientes, haciendo una transformación logaritmica antes de la fase de entrenamiento. 
+</div>
+
+### 3. Transformación Logarítmica: Tratamiento de Outliers y Asímetría
+
+<div class="text-justify" markdown="1">
+
+Como se destacó en la estadística descriptiva previa, variables como el Gasto Total (`Monetary`) y `Frequency` presentaban una asimetría positiva extrema. Mientras que el cliente promedio (la mediana) gastaba alrededor de $674, existían valores atípicos (outliers) o "clientes ballena" con gastos superiores a los $280,000.
+
+Los algoritmos predictivos de clasificación, especialmente los paramétricos como la Regresión Logística, son altamente sensibles a estas magnitudes extremas. Si el modelo se hubiera entrenado con los datos crudos, el algoritmo habría sesgado sus pesos matemáticos para intentar ajustarse a ese pequeño grupo atípico, ignorando las sutilezas del comportamiento de abandono del cliente promedio, quien representa el verdadero volumen y sustento del negocio.
+
+El objetivo de la transformación es normalizar la distribución matemáticamente para estas distancias extremas sin perder la jerarquía y varianza de los datos, es decir, el cliente que gasta más sigue teniendo el valor más alto, pero en una escala más densa. Esto permite que el modelo evalúe el riesgo de fuga de manera equitativa en todos los segmentos de clientes, mejorando su capacidad de generalización y asegurando que las alertas de retención se dirijan a clientes representativos.
+
+Se aplicó una transfromación logarítmica utilizando la librería `Numpy`. Se utilizó la función `np.log1p`, debido para evitar errores computacionales con valores cero, es decir, que si hay algún cliente con valor 0, seguira siendo cero. Después de hacer la transformación logarítmica nos dio: 
+
+| Estadística | Recency (Log) | Frequency (Log) | Monetary (Log) |
+| :--- | :--- | :--- | :--- |
+| **count** | 4,338 | 4,338 | 4,338 |
+| **mean** | 3.831 | 1.346 | 6.594 |
+| **std** | 1.340 | 0.683 | 1.258 |
+| **min** | 0.693 | 0.693 | 1.558 |
+| **25%** | 2.944 | 0.693 | 5.731 |
+| **50%** | 3.951 | 1.099 | 6.515 |
+| **75%** | 4.963 | 1.792 | 7.416 |
+| **max** | 5.927 | 5.347 | 12.543 |
+
+A continuación se muestra la diferencia de los datos crudos, antes y después de la transformación logarítmica. 
+
+<div class="row justify-content-center">
+  <div class="col-sm-8 mt-3 mt-md-4">
+    {% include figure.liquid loading="eager" path="assets/img/normalvslog.jpg" title="Histogramas Crudo Vs Log" class="img-fluid rounded z-depth-1" %}
+  </div>
+</div>
+<div class="caption text-center mt-2">
+    Figura 1. Izquierda: Histograma con los datos crudos (Sesgada) | Derecha: Histograma posterior a la transformación logarítmica.
+</div>
+
+
 </div>
