@@ -567,4 +567,5 @@ Para materializar el impacto de esta decisión comercial, generamos la **Matriz 
     Figura 4. Matriz de Confusión con Umbral al 20%. El modelo optimizado logra capturar a 280 clientes en riesgo real de abandono (Verdaderos Positivos), dejando escapar únicamente a 27 desertores (Falsos Negativos). Como sacrificio comercial, el sistema genera 279 falsas alarmas (Falsos Positivos), un costo operativo preferible y justificable frente a la pérdida definitiva de clientes.
 </div>
 
+
 </div>
