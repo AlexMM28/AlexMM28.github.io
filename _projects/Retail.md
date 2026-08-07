@@ -444,3 +444,77 @@ La Regresión Logística es, por definición, un modelo lineal que asigna pesos 
 Al introducir esta nueva columna, no se le proporcionó al modelo ninguna información nueva; simplemente se ingresó una redundancia. Este hallazgo demostró que para romper el techo del 0.52 de Recall, no bastaría con reciclar las mismas dimensiones matemáticas, sino que se requeriría información de una naturaleza distinta o un cambio en el umbral de decisión.
 
 </div>
+
+### Optimización del Umbral de Decisión: Priorizando la Retención
+
+<div class="text-justify" markdown="1">
+
+Por defecto, algoritmos como la Regresión Logística utilizan un umbral de decisión del 0.5 (50%). Esto significa que el modelo solo clasificará a un cliente como "en fuga" si está más de un 50% seguro de ello. 
+
+Desde una perspectiva de negocio, esta configuración estándar resultó ser inútil para nuestro objetivo. Esperar a que el modelo tenga un 50% de certeza significa ignorar las señales tempranas de abandono, lo que explica por qué nuestro Recall estaba estancado en 0.52 (dejando escapar a casi la mitad de los desertores). En la industria del retail, es preferible pecar de precavidos: el costo de enviarle un descuento o correo de retención a un cliente leal por error (Falso Positivo) es mínimo en comparación con el impacto financiero de perder a un comprador real (Falso Negativo).
+
+Para solucionar esto, era necesario modificar la sensibilidad del algoritmo. En lugar de aceptar el límite predeterminado, se desarrolló un ciclo iterativo (`for loop`) para evaluar el rendimiento del modelo a través de múltiples escenarios. 
+
+El objetivo de este ciclo fue calcular la Precisión y el Recall para cada umbral de probabilidad entre el 10% y el 90% (0.1 a 0.9). Esto nos permitió visualizar el trade-off (compromiso) entre retener a la mayor cantidad de clientes posibles y no desperdiciar presupuesto en demasiados falsos positivos.
+
+El ciclo for se ejecuto de la siguiente manera: 
+
+```python
+from sklearn.metrics import recall_score, precision_score
+
+# Definimos una lista de umbrales a probar (del 10% al 90%, en saltos de 5%)
+umbrales = np.arange(0.1, 0.95, 0.05)
+
+# Lista vacía para guardar los resultados de cada ciclo
+resultados_umbrales = []
+
+for t in umbrales:
+    # Clasificamos usando el umbral 't'
+    pred_t = (probabilidades >= t).astype(int)
+    
+    # Calculamos las métricas clave para la clase 1 (Churn)
+    recall = recall_score(y_test_v, pred_t, zero_division=0)
+    precision = precision_score(y_test_v, pred_t, zero_division=0)
+    
+    # Guardamos los resultados
+    resultados_umbrales.append({
+        'Umbral': round(t, 2), 
+        'Recall': round(recall, 3), 
+        'Precision': round(precision, 3)
+    })
+
+# Convertimos la lista a un DataFrame para visualizarlo fácilmente
+df_umbrales = pd.DataFrame(resultados_umbrales)
+
+# Filtramos para ver solo las opciones donde salvamos al menos al 60% de los clientes
+opciones_viables = df_umbrales[df_umbrales['Recall'] >= 0.60]
+print("--- Opciones de Umbral para el Negocio ---")
+print(opciones_viables)
+```
+A través del ciclo iterativo, generamos la siguiente tabla de sensibilidad, la cual nos permite visualizar cómo cambia la capacidad de retención (Recall) frente a la certeza de la alerta (Precisión):
+
+| Umbral (Threshold) | Sensibilidad (Recall) | Precisión (Precision) |
+| :---: | :---: | :---: |
+| 0.10 | 0.987 | 0.427 |
+| 0.15 | 0.971 | 0.469 |
+| **0.20** | **0.912** | **0.501** |
+| 0.25 | 0.863 | 0.527 |
+| 0.30 | 0.795 | 0.547 |
+| 0.35 | 0.723 | 0.572 |
+| 0.40 | 0.638 | 0.596 |
+
+## Conclusión Comercial: La Decisión del 20%
+
+Al analizar los resultados arrojados por la iteración, se concluyó que el umbral más óptimo y rentable para el negocio es el de 0.20 (20%).
+
+Con este nuevo límite de decisión, los resultados del modelo se transformaron radicalmente:
+
+- **Recall (91%):** Logramos identificar y alertar sobre 279 de los 307 clientes totales que realmente estaban en proceso de fuga (Recall de 0.91).
+
+- **Precisión (50%):** Obtuvimos una precisión de 0.50.
+
+**¿Qué significa esto para la empresa?**
+
+Al reducir el umbral al 20%, le estamos diciendo al modelo: <u>"Si ves incluso una ligera probabilidad (20%) de que un cliente se vaya, levanta la mano"</u>. Es cierto que ahora 1 de cada 2 alertas será una falsa alarma (clientes que no se iban a ir y aún así recibirán una campaña de retención). Sin embargo, a cambio de este margen de error, blindamos al negocio reteniendo al 91% de los verdaderos desertores, transformando un modelo predictivo estándar en una verdadera red de seguridad financiera.
+
+</div>
