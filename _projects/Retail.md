@@ -537,7 +537,7 @@ Para complementar el análisis numérico y tener una visión completa del compor
     Figura 3. Curva Precision-Recall. La gráfica ilustra el "trade-off" del modelo: a medida que exigimos detectar más fugas reales (Recall acercándose a 1.0), la certeza de cada alarma (Precision) disminuye naturalmente. El Área Promedio (AP = 0.61) indica un rendimiento predictivo sólido para un conjunto de datos altamente desbalanceado.
 </div>
 
-## Conclusión Comercial: La Decisión del 20%
+## Justificación Comercial: La Decisión del 20%
 
 Al analizar los resultados arrojados por la iteración, se concluyó que el umbral más óptimo y rentable para el negocio es el de 0.20 (20%).
 
@@ -567,5 +567,23 @@ Para materializar el impacto de esta decisión comercial, generamos la **Matriz 
     Figura 4. Matriz de Confusión con Umbral al 20%. El modelo optimizado logra capturar a 280 clientes en riesgo real de abandono (Verdaderos Positivos), dejando escapar únicamente a 27 desertores (Falsos Negativos). Como sacrificio comercial, el sistema genera 279 falsas alarmas (Falsos Positivos), un costo operativo preferible y justificable frente a la pérdida definitiva de clientes.
 </div>
 
+</div>
+
+## Conclusiones y Próximos Pasos: Del Dato a la Estrategia Comercial
+
+<div class="text-justify" markdown="1">
+
+El desarrollo de este modelo predictivo demuestra que en la ciencia de datos aplicada a negocios, el éxito no radica en buscar una precisión matemática del 100% en un entorno aislado, sino en crear herramientas rentables y accionables. Al identificar el *Data Leakage* a tiempo y ajustar el umbral de decisión para capturar al 91% de los desertores reales, este proyecto deja de ser un simple ejercicio analítico para convertirse en un motor de retención.
+
+Si este modelo se desplegara en un entorno de producción real, habilitaría los siguientes casos de uso operativo:
+
+- **Automatización Inteligente de Descuentos:** El sistema puede conectarse mediante una API a plataformas de CRM o Email Marketing (como HubSpot o Mailchimp). En lugar de lanzar campañas masivas de descuentos que devalúan los productos y reducen los márgenes de ganancia, el sistema dispararía cupones promocionales exclusivamente a los clientes que el modelo acaba de etiquetar en riesgo, incentivando su regreso justo a tiempo.
+- **Optimización del Presupuesto (ROI):** Al tener certeza sobre qué clientes son leales (los Verdaderos Negativos) y no tienen intención de irse, la empresa evita desperdiciar presupuesto publicitario de retención en ellos. Esos recursos pueden redirigirse a campañas de adquisición de nuevos usuarios.
+- **Alertas de Intervención VIP (High-Value Churn):** Cruzando las predicciones de fuga con la columna `Monetary` (Gasto Total), el sistema puede segmentar a los "Desertores de Alto Valor". Para este grupo de clientes VIP, en lugar de un correo automático, el modelo puede detonar una alerta en el sistema del equipo de ventas para ejecutar una llamada telefónica personalizada u ofrecer beneficios exclusivos.
+
+**Recomendaciones para Futuras Iteraciones**
+Para una "Versión 2.0" de este sistema, se recomienda enriquecer la base de datos integrando variables de estacionalidad (fechas festivas, temporadas de rebajas) y análisis de canasta. Esto permitiría no solo predecir cuándo se irá un cliente, sino sugerirle automáticamente qué producto específico ofrecerle para evitarlo.
+
+En conclusión, este proyecto establece una línea base sólida que permite a cualquier equipo comercial abandonar la postura reactiva (intentar recuperar a un cliente que ya se fue) para adoptar una postura predictiva y proactiva, protegiendo el flujo de ingresos de la compañía.
 
 </div>
