@@ -162,14 +162,14 @@ Al generar esta nueva matriz, obtuvimmos el perfil consodilado de **4338 cliente
 | **75%** | 142.0 | 5.0 | 1,661.74 |
 | **max** | 374.0 | 209.0 | 280,206.02 |
 
-Al observar la tabla, es evidente que esxiste una dispersión masiva en el gasto **(Monetary)** mientras que el clinete típico (la mediana) gasta $674.48, el valor máximo asciende a más de $280,000. Esta fuerte asimetría nos indicá inmediatamente que los datos crudos van a generar un sesgo a los modelos predictivos hacia los clientes, haciendo una transformación logaritmica antes de la fase de entrenamiento. 
+Al observar la tabla, es evidente que esxiste una dispersión masiva en el gasto **(Monetary)** mientras que el clinete típico (la mediana) gasta $674.48; el valor máximo asciende a más de $280,000. Esta fuerte asimetría nos indicá inmediatamente que los datos crudos van a generar un sesgo a los modelos predictivos hacia los clientes, haciendo una transformación logaritmica antes de la fase de entrenamiento. 
 </div>
 
 ### 3. Transformación Logarítmica: Tratamiento de Outliers y Asímetría
 
 <div class="text-justify" markdown="1">
 
-Como se destacó en la estadística descriptiva previa, variables como el Gasto Total (`Monetary`) y `Frequency` presentaban una asimetría positiva extrema. Mientras que el cliente promedio (la mediana) gastaba alrededor de $674, existían valores atípicos (outliers) o "clientes ballena" con gastos superiores a los $280,000.
+Como se destacó en la estadística descriptiva previa, variables como el Gasto Total (`Monetary`) y `Frequency` presentaban una asimetría positiva extrema. Mientras que el cliente promedio (la mediana) gastaba alrededor de $674, existían valores atípicos (outliers) o clientes ballena con gastos superiores a los $280,000.
 
 Los algoritmos predictivos de clasificación, especialmente los paramétricos como la Regresión Logística, son altamente sensibles a estas magnitudes extremas. Si el modelo se hubiera entrenado con los datos crudos, el algoritmo habría sesgado sus pesos matemáticos para intentar ajustarse a ese pequeño grupo atípico, ignorando las sutilezas del comportamiento de abandono del cliente promedio, quien representa el verdadero volumen y sustento del negocio.
 
@@ -191,7 +191,7 @@ Se aplicó una transfromación logarítmica utilizando la librería `Numpy`. Se 
 A continuación se muestra la diferencia de los datos crudos, antes y después de la transformación logarítmica. 
 
 <div class="row justify-content-center">
-  <div class="col-sm-8 mt-3 mt-md-4">
+  <div class="col-sm-12 mt-3 mt-md-4">
     {% include figure.liquid loading="eager" path="assets/img/normalvslog.jpg" title="Histogramas Crudo Vs Log" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
@@ -199,6 +199,46 @@ A continuación se muestra la diferencia de los datos crudos, antes y después d
     Figura 1. Izquierda: Histograma con los datos crudos (Sesgada) | Derecha: Histograma posterior a la transformación logarítmica.
 </div>
 
+
+</div>
+
+<hr>
+
+## Definición de la Variable Objetivo: Estableciendo el Umbral de Abandono.
+
+<div class="text-justify" markdown="1">
+
+Para entrenar un modelo de Machine Learning supervisado, es indispensable contar con una variable objetivo que le indique al algoritmo qué es exactamente lo que estamos buscando. En este caso, necesitábamos definir una regla de negocio clara para clasificar a la base de usuarios en dos categorías: clientes Activos (0) o en estado Inactivo (1).
+
+A esta variable objetivo la llamaremos `Churn`, que es el dictamen de días que sabemos si perdemos o aún tenemos un cliente.
+
+A diferencia de un servicio de suscripción donde el usuario cancela explícitamente su contrato, en el sector retail el abandono es silencioso. Para establecer un punto de corte justo y basado en datos empíricos, se recurrió a la estadística descriptiva del análisis RFM. 
+
+Dado que el promedio de Recencia (días desde la última compra) de toda la población de clientes era de aproximadamente 92.5 días, se determinó estratégicamente que **90 días de inactividad** es un rango de tiempo razonable y representativo para diagnosticar que un cliente ha interrumpido sus hábitos de consumo con la marca.
+
+Con esta regla de negocio, se creó la columna `Churn` y se integró a la matriz de características:
+
+```python
+umbral_dias = 90 
+
+# Creamos la columna Churn (1 si pasaron más días que el umbral, 0 si no)
+rfm_df['Churn'] = (rfm_df['Recency'] > umbral_dias).astype(int)
+
+# Y también se la agregamos a nuestro dataframe logarítmico para usarlo en el modelo
+rfm_log['Churn'] = rfm_df['Churn']
+
+# con value_counts observamos cuantos clientes hemos perdido y cuantos hemos retenido.
+print('Clientes actualmente:')
+print(rfm_df['Churn'].value_counts())
+```
+Al aplicar este umbral de 90 días a la base de datos, el algoritmo clasificó el estado actual de nuestro portafolio de la siguiente manera:
+
+| Estado del Cliente | Etiqueta (Churn) | Cantidad de Clientes |
+| :--- | :--- | :--- |
+| **Activos** | `0` | 2,889 |
+| **En Fuga (Inactivos)** | `1` | 1,449 |
+
+Esta distribución nos confirma que tenemos un conjunto de datos desbalanceado (como es natural en los problemas de retención), con aproximadamente un 33% de la base de clientes clasificada como fuga.
 
 
 </div>
