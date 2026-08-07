@@ -82,7 +82,7 @@ Posteriormente de limpiar y filtrar nuestra base de datos, estos fueron los resu
 
 | Data Frame antes de Purificar | Data Frame después de Purificar | 
 | :----------- | :------------: | 
-| 541 909, 8       |    397 884, 8    | 
+| 541 909, 8       | 397 884, 8    | 
 
 </div>
 
