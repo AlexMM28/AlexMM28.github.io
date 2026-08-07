@@ -334,11 +334,11 @@ print(f"Precisión Random Forest:       {accuracy_score(y_test, predicciones_rf)
 | **Regresión Logística** | 0.7143 (71.43%) |
 | **Random Forest Classifier** | 0.6429 (64.29%) |
 
-**Regresión Logística le gano a Random Forest Classifier**. Esto debido a que Regresión Logistica trazó una línea matemáticamente limpia y funciono bastante bien. El algortimo de Random Forest al ser más complejo intento crear reglas más especificas para cada cliente en los datos de prueba. Importante mencionar que <u>un modelo más complejo no es mejor siempre, especialmente cuando tienes pocas características.</u>
+**Regresión Logística le gano a Random Forest Classifier**. Esto debido a que Regresión Logistica trazó una línea matemáticamente limpia y funciono bastante bien. El algortimo de Random Forest al ser más complejo intento crear reglas más especificas para cada cliente en los datos de prueba, por lo tanto, nos quedamos con el algortimo de regresión Logística. Importante mencionar que <u>"un modelo más complejo no es mejor siempre, especialmente cuando tienes pocas características."</u>
 
 </div>
 
-### Matríz de Confusión y Reporte de Clasificación (Classification reporte)
+### Matríz de Confusión y Reporte de Clasificación (Classification Report)
 
 <div class="text-justify" markdown="1">
 
@@ -386,5 +386,61 @@ print(reporte_lr)
 | **0 (Activos)** | 0.76 | 0.82 | 0.79 | 561 |
 | **1 (Fuga)** | 0.61 | 0.52 | 0.56 | 307 |
 
+
+</div>
+
+### Optimización del modelo: Mejorar el Recall
+
+<div class="text-justify" markdown="1">
+
+Una precisión global de 71% establecia un buen punto de partida, el **Recall de 0.52** para la clase de Fuga (1) presentaba un área de oportunidad crítica. Este valor indicaba que el modelo solo lograba detectar al 52% de los clientes que realmente abandonaban la marca, dejando que casi la mitad de los desertores pasaran desapercibidos. El objetivo de esta nueva iteración fue someter los datos a una fase de ingeniería de características (Feature Engineering) más profunda para elevar esta métrica predictiva.
+
+### Hipótesis: Introducción del Ticket Promedio
+
+Recurriendo a métricas fundamentales del sector retail, se propuso integrar el **Ticket Promedio** (gasto promedio por transacción). La lógica de negocio sugería que una disminución en el volumen de compra por visita podría ser un síntoma temprano y poderoso de abandono.
+
+Para implementar esto, se calculó la proporción utilizando los valores crudos (`Monetary` / `Frequency`) y, posteriormente, se aplicó la transformación logarítmica a esta nueva columna para mantener la consistencia con la estabilización y simetría del resto de los datos.
+
+Se integró esta nueva característica al conjunto predictivo, se procedió a reentrenar la Regresión Logística y se generó un nuevo reporte de clasificación.
+
+```python
+# calcularemos el ticket promedio en los datos originales 
+rfm_df['Ticket_Promedio'] = rfm_df['Monetary'] / rfm_df['Frequency']
+
+# Lo aplicamos en el logarotimo y lo guardamos en nuestro data set 
+rfm_log['Ticket_Promedio'] = np.log1p(rfm_df['Ticket_Promedio'])
+
+# Redefinimos nuestras variable X
+X_nueva = rfm_log[['Frequency', 'Monetary', 'Ticket_Promedio']]
+y_nueva = rfm_log['Churn']
+
+# Volvemos a dividir los datos para entrenar 
+X_train_n, X_test_n, y_train_n, y_test_n = train_test_split(X_nueva, y_nueva, test_size= 0.2, random_state= 42)
+
+# volvemos a entranar con Logistic Regression debido a que fue el modelo ganador
+modelo_lr.fit(X_train_n, y_train_n)
+predicciones_lr_n = modelo_lr.predict(X_test_n)
+
+# Nuevo reporte de ticket promedio 
+print('Reporte de ticket promedio:')
+print(classification_report(y_test_n, predicciones_lr_n))
+```
+
+Contra las expectativas de optimizar la estdística del modelo, los resultados fueron idénticos. Las métricas, incluyendo el Recall crítico de 0.52, no mostraron absolutamente ninguna variación.
+
+| Categoría | Precisión (Precision) | Sensibilidad (Recall) | F1-Score | Soporte (Total de clientes) |
+| :--- | :--- | :--- | :--- | :--- |
+| **0 (Activos)** | 0.76 | 0.82 | 0.79 | 561 |
+| **1 (Fuga)** | 0.61 | 0.52 | 0.56 | 307 |
+
+La respuesta nula a esta hipótesis de agregar la técnica de Ticket Promedio, se debe a que la respuesta no radicaba en el comportamiento del cliente, sino en las propiedades del álgebra y la naturaleza del algoritmo. Al calcular el Ticket Promedio y aplicar el logaritmo, matemáticamente se ejecutó la siguiente operación basándose en la ley de los logaritmos para cocientes, es decir: 
+
+$$
+\log\left(\frac{\text{Monetary}}{\text{Frequency}}\right) = \log(\text{Monetary}) - \log(\text{Frequency})
+$$
+
+La Regresión Logística es, por definición, un modelo lineal que asigna pesos (coeficientes) a las variables. Puesto que el conjunto de entrenamiento ya incluía `Log_Monetary` y `Log_Frequency` como variables independientes, el algoritmo ya estaba capturando implícitamente la relación lineal entre ambas.
+
+Al introducir esta nueva columna, no se le proporcionó al modelo ninguna información nueva; simplemente se ingresó una redundancia. Este hallazgo demostró que para romper el techo del 0.52 de Recall, no bastaría con reciclar las mismas dimensiones matemáticas, sino que se requeriría información de una naturaleza distinta o un cambio en el umbral de decisión.
 
 </div>
