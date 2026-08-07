@@ -240,5 +240,151 @@ Al aplicar este umbral de 90 días a la base de datos, el algoritmo clasificó e
 
 Esta distribución nos confirma que tenemos un conjunto de datos desbalanceado (como es natural en los problemas de retención), con aproximadamente un 33% de la base de clientes clasificada como fuga.
 
+</div>
+
+<hr>
+
+## Optimización del modelo y decisión del negocio
+
+### Estrategia de Modelado: Partición de Datos y Selección de Algoritmos
+
+<div class="text-justify" markdown="1">
+
+Una vez que las variables predictoras `Frequency`, `Monetary`, `Recency` y la variable a predecir `Churn` fueron consolidadas y depuradas de cualquier riesgo de fuga de datos, el conjunto estaba listo para la fase de entrenamiento.
+
+Para garantizar que los modelos desarrollaran verdadera capacidad de generalización y no se limitaran a memorizar el historial (overfitting), se aplicó una división metodológica de los datos en una proporción **80/20**:
+- **Conjunto de Entrenamiento (80%):** Utilizado exclusivamente para que los algoritmos matemáticos aprendieran los patrones de comportamiento que anteceden a la fuga de un cliente.
+- **Conjunto de Prueba (20%):** Este subconjunto funciona como nuestro simulador de entorno de producción para validar la precisión real del modelo.
+
+```python
+from sklearn.model_selection import train_test_split
+
+# Definimos las varibles predictivas (X) y la varible a predecir (Y)
+X = rfm_log[['Frequency', 'Monetary', 'Recency']]
+y = rfm_log['Churn']
+
+# Dividimos los datos en 80% entrenamiento y 20% prueba 
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size= 0.2, random_state= 42)
+```
+
+En lugar de forzar un único modelo, se diseñó una estrategia de evaluación comparativa entre dos enfoques de clasificación distintos:
+
+La intención principal era utilizar **Random Forest Classifier** por su altísima capacidad predictiva. Random Forest es excelente para capturar relaciones no lineales complejas, requiere menos suposiciones sobre la distribución de los datos y tiene un riesgo bajo de sobreajuste. Este modelo se estableció como nuestra línea base de alto rendimiento.
+
+ Aunque Random Forest es sumamente preciso, su naturaleza de "caja negra" dificulta explicar el porqué de una decisión a los equipos de venta o gerencia. Por ello, se entrenó en paralelo un modelo de **Regresión Logística**. El objetivo era evaluar si este modelo más tradicional lograba una precisión competitiva frente al Random Forest; de ser así, nos brindaría una ventaja fundamental en el mundo de los negocios. Tras entrenar y evaluar ambos modelos con el conjunto de prueba (el 20% de datos invisibles), obtuvimos los siguientes resultados:
+
+| Modelo Predictivo | Precisión (Accuracy) |
+| :--- | :--- |
+| **Regresión Logística** | 0.9965 (99.65%) |
+| **Random Forest Classifier** | 1.000 (100%) |
+
+</div>
+
+### Detección de fuga de datos y ajuste del modelo 
+
+<div class="text-justify" markdown="1">
+
+En la primera prueba de entrenamiento, incluyendo todas las características generadas en la matriz RFM, los modelos obtuvieron métricas de precisión extraordinariamente altas en el conjunto de prueba. 
+En el mundo real de la ciencia de datos, un modelo con un rendimiento prácticamente perfecto casi nunca significa que el algoritmo sea un "éxito rotundo"; por el contrario, suele ser una clara señal de un error metodológico conocido como **Data Leakage (Fuga de Datos)**.
+
+Al inspeccionar por qué los algoritmos alcanzaban la perfección, la causa fue evidente al revisar la definición de nuestra variable objetivo (`Churn`):
+
+1. **La Regla de Negocio:** Se definió que un cliente está en estado de "Fuga" (`Churn = 1`) si su `Recency` es mayor a 90 días.
+2. **El Conflicto en 'X':** Si mantenemos la variable `Recency` dentro del conjunto de variables predictoras (`X`), le estamos entregando al modelo la respuesta exacta del examen.
+
+El algoritmo de **Random Forest** obtuvo 100% de precisión porque simplemente aprendió una regla condicional directa (Si Recency > 90 entonces Churn = 1), mientras que la **Regresión Logística** asignó un peso matemático casi absoluto a esa misma variable. El modelo no estaba aprendiendo a predecir hábitos o patrones de abandono; simplemente estaba recalculando la regla que nosotros mismos habíamos programado.
+
+La solución para que un sistema predictivo útil para el negocio debe ser capaz de anticipar el riesgo de fuga analizando el comportamiento del cliente (cuánto gasta, qué tan seguido compra o qué variedad de productos consume), y no solo medir los días de inactividad cuando ya se cumplió el plazo.
+
+Por esta razón, se tomó la decisión metodológica de **eliminar `Recency` de las variables predictoras (`X`)** y conservar únicamente las métricas de comportamiento. Se volvieron a entranar y evaluar con las nuevas variables y se obtuvo: 
+
+```python
+from sklearn.model_selection import train_test_split
+
+# Definimos las varibles predictivas (X) y la varible a predecir (Y)
+X = rfm_log[['Frequency', 'Monetary']]
+y = rfm_log['Churn']
+
+# Dividimos los datos en 80% entrenamiento y 20% prueba 
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size= 0.2, random_state= 42)
+
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+
+# 1. Inicializamos ambos modelos
+modelo_lr = LogisticRegression(random_state=42)
+modelo_rf = RandomForestClassifier(random_state=42)
+
+# 2. Entrenamos (Ajustamos) los modelos con los datos de entrenamiento
+modelo_lr.fit(X_train, y_train)
+modelo_rf.fit(X_train, y_train)
+
+# 3. Hacemos que ambos examinen los datos de prueba
+predicciones_lr = modelo_lr.predict(X_test)
+predicciones_rf = modelo_rf.predict(X_test)
+
+# 4. Imprimimos el veredicto (Precisión)
+print("--- Resultados del Duelo ---")
+print(f"Precisión Regresión Logística: {accuracy_score(y_test, predicciones_lr):.4f}")
+print(f"Precisión Random Forest:       {accuracy_score(y_test, predicciones_rf):.4f}")
+```
+| Modelo Predictivo | Precisión (Accuracy) |
+| :--- | :--- |
+| **Regresión Logística** | 0.7143 (71.43%) |
+| **Random Forest Classifier** | 0.6429 (64.29%) |
+
+**Regresión Logística le gano a Random Forest Classifier**. Esto debido a que Regresión Logistica trazó una línea matemáticamente limpia y funciono bastante bien. El algortimo de Random Forest al ser más complejo intento crear reglas más especificas para cada cliente en los datos de prueba. Importante mencionar que <u>un modelo más complejo no es mejor siempre, especialmente cuando tienes pocas características.</u>
+
+</div>
+
+### Matríz de Confusión y Reporte de Clasificación (Classification reporte)
+
+<div class="text-justify" markdown="1">
+
+Tras obtener la precisión general de los modelos (71.43% para la Regresión Logística), surgió una pregunta analítica fundamental: ¿Es suficiente saber que el algoritmo acierta 7 de cada 10 veces? En proyectos de retención de clientes, la respuesta es no. 
+
+Dado que nuestro conjunto de datos está naturalmente desbalanceado (hay más clientes activos que inactivos), un modelo podría obtener un porcentaje decente simplemente prediciendo que "nadie se va". Para entender el verdadero comportamiento y utilidad de las predicciones, fue estrictamente necesario implementar dos herramientas de evaluación más robustas:
+
+**¿Por qué es necesaria la matriz de confusión?** 
+La precisión global no nos indica qué tipo de equivocaciones está cometiendo el algoritmo. La Matriz de Confusión soluciona esto al desglosar las predicciones en cuatro escenarios vitales:
+* **True Positives (TP):** Clientes que el modelo identificó correctamente en estado de fuga. (El acierto principal).
+* **Falses Negatives (FN):** Clientes que realmente abandonaron la marca, pero que el modelo clasificó como "Activos". Para una empresa, este es el peor escenario, ya que no se emite ninguna alerta y se pierde la oportunidad de retenerlos.
+* **Falses Positives (FP):** Clientes leales que el modelo etiquetó en riesgo por error. (El costo aquí es menor;por lo tanto, se les enviaría una promoción innecesaria).
+* **True Negatives (TN):** Clientes activos identificados correctamente.
+
+**¿Por qué se utilizó el reporte de clasifiación?**
+Para cuantificar lo que observamos en la Matriz de Confusión, este reporte nos entrega tres métricas estadísticas clave que traducen los aciertos y errores en indicadores reales de rendimiento:
+* **Recall:** De todos los clientes que realmente abandonaron, ¿qué porcentaje logró detectar nuestro modelo? Es decir, mide cuantos **TP** fueron detectados por el modelo.
+* **Precisión (Precision):** De todos los clientes que el modelo etiquetó como "en riesgo de fuga", ¿cuántos realmente se fueron? 
+* **F1-Score:** Representa el equilibrio perfecto entre el Recall y la Precisión. Es la métrica definitiva para evaluar la calidad del modelo cuando las categorías (Activos vs. Fuga) no son simétricas.
+* **Support**: Es la cantidad de veces que aparece cada clase real en tus datos de prueba.
+
+Se generó una matriz de confusión y un reporte de clasificación con el siguiente código: 
+
+```python
+from sklearn.metrics import confusion_matrix, classification_report
+
+# Generamos la matriz de confusion a partir de la Regresión Logistica 
+matriz_lr = confusion_matrix(y_test, predicciones_lr)
+reporte_lr = classification_report(y_test, predicciones_lr)
+
+print('Matriz de confusión:')
+print(matriz_lr)
+print('Reporte de clasificación')
+print(reporte_lr)
+```
+
+| | Predicción del Modelo: Activo (0) | Predicción del Modelo: Fuga (1) |
+| :--- | :--- | :--- |
+| **Realidad: Cliente Activo (0)** | **461** (Verdaderos Negativos) | **100** (Falsos Positivos) |
+| **Realidad: Cliente en Fuga (1)** | **148** (Falsos Negativos) | **159** (Verdaderos Positivos) |
+
+
+| Categoría | Precisión (Precision) | Sensibilidad (Recall) | F1-Score | Soporte (Total de clientes) |
+| :--- | :--- | :--- | :--- | :--- |
+| **0 (Activos)** | 0.76 | 0.82 | 0.79 | 561 |
+| **1 (Fuga)** | 0.61 | 0.52 | 0.56 | 307 |
+
 
 </div>
