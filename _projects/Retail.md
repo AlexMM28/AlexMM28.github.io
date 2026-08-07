@@ -240,6 +240,24 @@ Al aplicar este umbral de 90 días a la base de datos, el algoritmo clasificó e
 
 Esta distribución nos confirma que tenemos un conjunto de datos desbalanceado (como es natural en los problemas de retención), con aproximadamente un 33% de la base de clientes clasificada como fuga.
 
+Antes de someter los datos a cualquier algoritmo de Machine Learning, es fundamental validar visualmente si las características que hemos construido (Frecuencia y Gasto) realmente poseen poder discriminatorio. Es decir, ¿existe una diferencia de comportamiento visible entre un cliente leal y uno que termina abandonando la marca?
+
+Para evaluar esto, construimos gráficos de violín comparando las distribuciones logarítmicas de ambos grupos:
+
+<div class="row justify-content-center">
+  <div class="col-sm-12 mt-3 mt-md-0">
+    {% include figure.liquid 
+      loading="lazy" 
+      path="assets/img/violin_plot.png" 
+      title="Perfil del Abandono: Distribución de Frecuencia y Gasto" 
+      class="img-fluid rounded z-depth-1"
+    %}
+  </div>
+</div>
+<div class="caption text-center mt-2">
+    Figura 2. Perfil del Abandono. Los gráficos de violín revelan una asimetría clara: los clientes en fuga (1, naranja) se concentran densamente en la parte inferior de ambas escalas, indicando compras esporádicas y de bajo valor. En contraste, los clientes activos (0, azul) presentan una distribución mucho más alargada hacia valores altos, confirmando que la Frecuencia y el Gasto Total son variables excelentes para predecir la retención.
+</div>
+
 </div>
 
 <hr>
@@ -503,6 +521,22 @@ A través del ciclo iterativo, generamos la siguiente tabla de sensibilidad, la 
 | 0.35 | 0.723 | 0.572 |
 | 0.40 | 0.638 | 0.596 |
 
+Para complementar el análisis numérico y tener una visión completa del comportamiento del algoritmo, graficamos la **Curva Precision-Recall**. Esta representación visual ilustra perfectamente el escenario al que nos enfrentamos: nos muestra cómo decae la certeza de nuestras alertas (Precisión) a medida que ampliamos la red para asegurarnos de atrapar a todos los clientes en riesgo de fuga (Recall).
+
+<div class="row justify-content-center">
+  <div class="col-sm-8 mt-3 mt-md-0">
+    {% include figure.liquid 
+      loading="lazy" 
+      path="assets/img/curva_precision.png" 
+      title="Curva Precision-Recall" 
+      class="img-fluid rounded z-depth-1"
+    %}
+  </div>
+</div>
+<div class="caption text-center mt-2">
+    Figura 3. Curva Precision-Recall. La gráfica ilustra el "trade-off" del modelo: a medida que exigimos detectar más fugas reales (Recall acercándose a 1.0), la certeza de cada alarma (Precision) disminuye naturalmente. El Área Promedio (AP = 0.61) indica un rendimiento predictivo sólido para un conjunto de datos altamente desbalanceado.
+</div>
+
 ## Conclusión Comercial: La Decisión del 20%
 
 Al analizar los resultados arrojados por la iteración, se concluyó que el umbral más óptimo y rentable para el negocio es el de 0.20 (20%).
@@ -516,5 +550,21 @@ Con este nuevo límite de decisión, los resultados del modelo se transformaron 
 **¿Qué significa esto para la empresa?**
 
 Al reducir el umbral al 20%, le estamos diciendo al modelo: <u>"Si ves incluso una ligera probabilidad (20%) de que un cliente se vaya, levanta la mano"</u>. Es cierto que ahora 1 de cada 2 alertas será una falsa alarma (clientes que no se iban a ir y aún así recibirán una campaña de retención). Sin embargo, a cambio de este margen de error, blindamos al negocio reteniendo al 91% de los verdaderos desertores, transformando un modelo predictivo estándar en una verdadera red de seguridad financiera.
+
+Para materializar el impacto de esta decisión comercial, generamos la **Matriz de Confusión ajustada al umbral del 20%**. Al comparar esta nueva matriz con la original (que usaba el 50%), el efecto de nuestra estrategia de retención salta a la vista: hemos acorralado drásticamente los errores más costosos para el negocio.
+
+<div class="row justify-content-center">
+  <div class="col-sm-8 mt-3 mt-md-0">
+    {% include figure.liquid 
+      loading="lazy" 
+      path="assets/img/matriz_20.png" 
+      title="Matriz de Confusión del Negocio (Umbral 20%)" 
+      class="img-fluid rounded z-depth-1"
+    %}
+  </div>
+</div>
+<div class="caption text-center mt-2">
+    Figura 4. Matriz de Confusión con Umbral al 20%. El modelo optimizado logra capturar a 280 clientes en riesgo real de abandono (Verdaderos Positivos), dejando escapar únicamente a 27 desertores (Falsos Negativos). Como sacrificio comercial, el sistema genera 279 falsas alarmas (Falsos Positivos), un costo operativo preferible y justificable frente a la pérdida definitiva de clientes.
+</div>
 
 </div>
