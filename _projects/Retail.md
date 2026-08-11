@@ -9,6 +9,9 @@ giscus_comments: true
 pretty_table: true
 ---
 
+* TOC
+{:toc}
+
 ## Resumen 
 
 <div class="text-justify" markdown="1">
@@ -51,6 +54,8 @@ La Solución Propuesta: Desarrollar un modelo predictivo basado en el comportami
 En este proyecto, el conjunto original consistía en un registro transaccional crudo, por lo que fue necesario un procesamiento exhaustivo para traducir cada línea de compra en un perfil de comportamiento de cliente accionable para el algoritmo.
 
 </div>
+
+<hr>
 
 ### 1. Limpieza de datos 
 
@@ -164,6 +169,7 @@ Al generar esta nueva matriz, obtuvimmos el perfil consodilado de **4338 cliente
 
 Al observar la tabla, es evidente que esxiste una dispersión masiva en el gasto **(Monetary)** mientras que el clinete típico (la mediana) gasta $674.48; el valor máximo asciende a más de $280,000. Esta fuerte asimetría nos indicá inmediatamente que los datos crudos van a generar un sesgo a los modelos predictivos hacia los clientes, haciendo una transformación logaritmica antes de la fase de entrenamiento. 
 </div>
+<hr>
 
 ### 3. Transformación Logarítmica: Tratamiento de Outliers y Asímetría
 
@@ -298,6 +304,8 @@ La intención principal era utilizar **Random Forest Classifier** por su altísi
 
 </div>
 
+<hr>
+
 ### Detección de fuga de datos y ajuste del modelo 
 
 <div class="text-justify" markdown="1">
@@ -356,6 +364,8 @@ print(f"Precisión Random Forest:       {accuracy_score(y_test, predicciones_rf)
 
 </div>
 
+<hr>
+
 ### Matríz de Confusión y Reporte de Clasificación (Classification Report)
 
 <div class="text-justify" markdown="1">
@@ -406,6 +416,8 @@ print(reporte_lr)
 
 
 </div>
+
+<hr>
 
 ### Optimización del modelo: Mejorar el Recall
 
@@ -462,6 +474,8 @@ La Regresión Logística es, por definición, un modelo lineal que asigna pesos 
 Al introducir esta nueva columna, no se le proporcionó al modelo ninguna información nueva; simplemente se ingresó una redundancia. Este hallazgo demostró que para romper el techo del 0.52 de Recall, no bastaría con reciclar las mismas dimensiones matemáticas, sino que se requeriría información de una naturaleza distinta o un cambio en el umbral de decisión.
 
 </div>
+
+<hr>
 
 ### Optimización del Umbral de Decisión: Priorizando la Retención
 
@@ -537,6 +551,8 @@ Para complementar el análisis numérico y tener una visión completa del compor
     Figura 3. Curva Precision-Recall. La gráfica ilustra el "trade-off" del modelo: a medida que exigimos detectar más fugas reales (Recall acercándose a 1.0), la certeza de cada alarma (Precision) disminuye naturalmente. El Área Promedio (AP = 0.61) indica un rendimiento predictivo sólido para un conjunto de datos altamente desbalanceado.
 </div>
 
+<hr>
+
 ## Justificación Comercial: La Decisión del 20%
 
 Al analizar los resultados arrojados por la iteración, se concluyó que el umbral más óptimo y rentable para el negocio es el de 0.20 (20%).
@@ -568,6 +584,8 @@ Para materializar el impacto de esta decisión comercial, generamos la **Matriz 
 </div>
 
 </div>
+
+<hr>
 
 ## Conclusiones y Próximos Pasos: Del Dato a la Estrategia Comercial
 
