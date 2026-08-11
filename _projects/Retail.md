@@ -61,8 +61,8 @@ En este proyecto, el conjunto original consistía en un registro transaccional c
 
 <div class="text-justify" markdown="1">
 
-El primer paso consistio en depurar la base de datos para segurarse de que el modelo aprendiera exclusivamnete las transacciones validas que representaran ingresos reales para el negocio.
-- Eliminación de registros incompletos: Se descartaron las filas que carecían de un identificador de cliente (Customer ID), ya que es imposible trazar el comportamiento de abandono sin saber a quién pertenece la compra; además solo se conservaron los valores mayores a cero (> 0) de las columnas **Quantity** y **UnitPrice**, debido a que necesitamos información óptima posteriormente para nuestro modelo. Para ello se ejecuto el siguiente código: 
+El primer paso consistió en depurar la base de datos para asegurarse de que el modelo aprendiera exclusivamente las transacciones válidas que representaran ingresos reales para el negocio.
+- Eliminación de registros incompletos: Se descartaron las filas que carecían de un identificador de cliente (Customer ID), ya que es imposible trazar el comportamiento de abandono sin saber a quién pertenece la compra; además solo se conservaron los valores mayores a cero (> 0) de las columnas **Quantity** y **UnitPrice**, debido a que necesitamos información óptima posteriormente para nuestro modelo. Para ello se ejecutó el siguiente código: 
 
 ```python
 #Visualización de datos nulos en el Data Frame 
@@ -80,10 +80,10 @@ df = df[df['Quantity']>0]
 df = df[df['UnitPrice']>0]
 
 # Tamaño del Data Frame purificado
-print(f'Tamaño del Data Frame actualizaco:{df.shape}')
+print(f'Tamaño del Data Frame actualizado:{df.shape}')
 ```
 
-Posteriormente de limpiar y filtrar nuestra base de datos, estos fueron los resultados:
+Posterior a limpiar y filtrar nuestra base de datos, estos fueron los resultados:
 
 | Data Frame antes de Purificar | Data Frame después de Purificar | 
 | :----------- | :------------: | 
@@ -97,24 +97,24 @@ Posteriormente de limpiar y filtrar nuestra base de datos, estos fueron los resu
 
 <div class="text-justify" markdown="1">
 
-Un algoritmo de Machine Learning no puede predecir el abandono a partir de una lista de tickets de compra aislados. En este caso, el conjunto de datos original estaba a nivel transaccional (cada fila representaba un producto dentro de una factura), lo cual imposibilita predecir el comportamiento individual del usuario. Para solucionar esto, se requería tranformar el historial de tickets de compra en perfiles de comportamiento únicos por cliente. Se optó por la metodología **RFM (Recency, Frequency, Monetary),** que es un estándar en la inteligencia de negocios que perfila a los clientes en tres dimensiones claves: 
+Un algoritmo de Machine Learning no puede predecir el abandono a partir de una lista de tickets de compra aislados. En este caso, el conjunto de datos original estaba a nivel transaccional (cada fila representaba un producto dentro de una factura), lo cual imposibilita predecir el comportamiento individual del usuario. Para solucionar esto, se requería transformar el historial de tickets de compra en perfiles de comportamiento únicos por cliente. Se optó por la metodología **RFM (Recency, Frequency, Monetary),** que es un estándar en la inteligencia de negocios que perfila a los clientes en tres dimensiones claves: 
 
 - **Recency (Recencia):** La cantidad de días transcurridos desde la última compra del cliente. 
 - **Frequency (Frecuencia):** El número total de compras realizadas por el usuario, lo que indica su nivel de lealtad e interacción.
-- **Monetary (Monetario):** El gasto total acumulado a lo largo de su cilo de vida con la empresa 
+- **Monetary (Monetario):** El gasto total acumulado a lo largo de su ciclo de vida con la empresa 
 
 Este modelo permite traducir millones de filas de ventas en tres indicadores clave que el algoritmo puede interpretar fácilmente para detectar cuándo un cliente está modificando sus hábitos de consumo y, por ende, en riesgo de fuga.
 
 </div>
 
-#### ¿Cómo se realizo?
+#### ¿Cómo se realizó?
 
 <div class="text-justify" markdown="1">
 
-El progreso de agregación se ejecuto en tres fases estratégicas utilizando la librería **pandas:**
+El proceso de agregación se ejecutó en tres fases estratégicas utilizando la librería **pandas:**
 
-1. **Calculo del valor real:** Primero, se generó una nueva característica calculando el gasto total por línea de producto, multiplicando la cantidad de artículos por su precio unitario.
-2. **Deficnición del horizonte temporal:** Para medir cuánto tiempo había pasado desde la última compra de un cliente, se estableció una fecha de referencia, esto para evitar sesgos; se simulo que le día de hoy era exactamente un día después de la transacción más reciente registrada en todo el conjunto de datos.
+1. **Cálculo del valor real:** Primero, se generó una nueva característica calculando el gasto total por línea de producto, multiplicando la cantidad de artículos por su precio unitario.
+2. **Definición del horizonte temporal:** Para medir cuánto tiempo había pasado desde la última compra de un cliente, se estableció una fecha de referencia, esto para evitar sesgos; se simuló que el día de hoy era exactamente un día después de la transacción más reciente registrada en todo el conjunto de datos.
 3. **Agregación Multidimensional (Grouping):** Se agrupo toda la información utilizando el identificador único del cliente **(CustomerID)** y se aplicaron funciones de agregación específicas para cada pilar del RFM:
     - **Recency:** Se calculó la diferencia en días entre la fecha de referencia y la fecha de la última compra del cliente.
     - **Frequency:** Se contabilizó el número de facturas únicas **(InvoiceNo)** asociadas al cliente, midiendo su recurrencia. 
@@ -154,7 +154,7 @@ print(rfm_df.head())
 | 19 | 1 | 1757.55 |
 | 310 | 1 | 334.4 |
 
-Al generar esta nueva matriz, obtuvimmos el perfil consodilado de **4338 clientes únicos**. La estadística descriptiva de esta nueva población revela comportamientos muy interesantes para el negocio: 
+Al generar esta nueva matriz, obtuvimmos el perfil consolidado de **4338 clientes únicos**. La estadística descriptiva de esta nueva población revela comportamientos muy interesantes para el negocio: 
 
 | Estadística | Recency | Frequency | Monetary |
 | :--- | :--- | :--- | :--- |
@@ -167,11 +167,11 @@ Al generar esta nueva matriz, obtuvimmos el perfil consodilado de **4338 cliente
 | **75%** | 142.0 | 5.0 | 1,661.74 |
 | **max** | 374.0 | 209.0 | 280,206.02 |
 
-Al observar la tabla, es evidente que esxiste una dispersión masiva en el gasto **(Monetary)** mientras que el clinete típico (la mediana) gasta $674.48; el valor máximo asciende a más de $280,000. Esta fuerte asimetría nos indicá inmediatamente que los datos crudos van a generar un sesgo a los modelos predictivos hacia los clientes, haciendo una transformación logaritmica antes de la fase de entrenamiento. 
+Al observar la tabla, es evidente que existe una dispersión masiva en el gasto **(Monetary)** mientras que el cliente típico (la mediana) gasta $674.48; el valor máximo asciende a más de $280,000. Esta fuerte asimetría nos indica inmediatamente que los datos crudos van a generar un sesgo a los modelos predictivos hacia los clientes, haciendo una transformación logaritmica antes de la fase de entrenamiento. 
 </div>
 <hr>
 
-### 3. Transformación Logarítmica: Tratamiento de Outliers y Asímetría
+### 3. Transformación Logarítmica: Tratamiento de Outliers y Asimetría
 
 <div class="text-justify" markdown="1">
 
@@ -181,7 +181,7 @@ Los algoritmos predictivos de clasificación, especialmente los paramétricos co
 
 El objetivo de la transformación es normalizar la distribución matemáticamente para estas distancias extremas sin perder la jerarquía y varianza de los datos, es decir, el cliente que gasta más sigue teniendo el valor más alto, pero en una escala más densa. Esto permite que el modelo evalúe el riesgo de fuga de manera equitativa en todos los segmentos de clientes, mejorando su capacidad de generalización y asegurando que las alertas de retención se dirijan a clientes representativos.
 
-Se aplicó una transfromación logarítmica utilizando la librería `Numpy`. Se utilizó la función `np.log1p`, debido para evitar errores computacionales con valores cero, es decir, que si hay algún cliente con valor 0, seguira siendo cero. Después de hacer la transformación logarítmica nos dio: 
+Se aplicó una transformación logarítmica utilizando la librería `Numpy`. Se utilizó la función `np.log1p`, debido a que evita errores computacionales con valores cero, es decir, que si hay algún cliente con valor 0, seguira siendo cero. Después de hacer la transformación logarítmica nos dio: 
 
 | Estadística | Recency (Log) | Frequency (Log) | Monetary (Log) |
 | :--- | :--- | :--- | :--- |
@@ -283,7 +283,7 @@ Para garantizar que los modelos desarrollaran verdadera capacidad de generalizac
 ```python
 from sklearn.model_selection import train_test_split
 
-# Definimos las varibles predictivas (X) y la varible a predecir (Y)
+# Definimos las variables predictivas (X) y la variable a predecir (Y)
 X = rfm_log[['Frequency', 'Monetary', 'Recency']]
 y = rfm_log['Churn']
 
@@ -320,14 +320,14 @@ Al inspeccionar por qué los algoritmos alcanzaban la perfección, la causa fue 
 
 El algoritmo de **Random Forest** obtuvo 100% de precisión porque simplemente aprendió una regla condicional directa (Si Recency > 90 entonces Churn = 1), mientras que la **Regresión Logística** asignó un peso matemático casi absoluto a esa misma variable. El modelo no estaba aprendiendo a predecir hábitos o patrones de abandono; simplemente estaba recalculando la regla que nosotros mismos habíamos programado.
 
-La solución para que un sistema predictivo útil para el negocio debe ser capaz de anticipar el riesgo de fuga analizando el comportamiento del cliente (cuánto gasta, qué tan seguido compra o qué variedad de productos consume), y no solo medir los días de inactividad cuando ya se cumplió el plazo.
+Para que un sistema predictivo sea útil para el negocio, debe ser capaz de anticipar el riesgo de fuga analizando el comportamiento del cliente (cuánto gasta, qué tan seguido compra o qué variedad de productos consume), y no solo medir los días de inactividad cuando ya se cumplió el plazo.
 
-Por esta razón, se tomó la decisión metodológica de **eliminar `Recency` de las variables predictoras (`X`)** y conservar únicamente las métricas de comportamiento. Se volvieron a entranar y evaluar con las nuevas variables y se obtuvo: 
+Por esta razón, se tomó la decisión metodológica de **eliminar `Recency` de las variables predictoras (`X`)** y conservar únicamente las métricas de comportamiento. Se volvieron a entrenar y evaluar con las nuevas variables y se obtuvo: 
 
 ```python
 from sklearn.model_selection import train_test_split
 
-# Definimos las varibles predictivas (X) y la varible a predecir (Y)
+# Definimos las variables predictivas (X) y la variable a predecir (Y)
 X = rfm_log[['Frequency', 'Monetary']]
 y = rfm_log['Churn']
 
@@ -360,13 +360,13 @@ print(f"Precisión Random Forest:       {accuracy_score(y_test, predicciones_rf)
 | **Regresión Logística** | 0.7143 (71.43%) |
 | **Random Forest Classifier** | 0.6429 (64.29%) |
 
-**Regresión Logística le gano a Random Forest Classifier**. Esto debido a que Regresión Logistica trazó una línea matemáticamente limpia y funciono bastante bien. El algortimo de Random Forest al ser más complejo intento crear reglas más especificas para cada cliente en los datos de prueba, por lo tanto, nos quedamos con el algortimo de regresión Logística. Importante mencionar que <u>"un modelo más complejo no es mejor siempre, especialmente cuando tienes pocas características."</u>
+**Regresión Logística le ganó a Random Forest Classifier**. Esto debido a que Regresión Logistica trazó una línea matemáticamente limpia y funcionó bastante bien. El algoritmo de Random Forest al ser más complejo intento crear reglas más específicas para cada cliente en los datos de prueba, por lo tanto, nos quedamos con el algoritmo de regresión Logística. Importante mencionar que <u>"un modelo más complejo no es mejor siempre, especialmente cuando tienes pocas características."</u>
 
 </div>
 
 <hr>
 
-### Matríz de Confusión y Reporte de Clasificación (Classification Report)
+### Matriz de Confusión y Reporte de Clasificación (Classification Report)
 
 <div class="text-justify" markdown="1">
 
@@ -377,11 +377,11 @@ Dado que nuestro conjunto de datos está naturalmente desbalanceado (hay más cl
 **¿Por qué es necesaria la matriz de confusión?** 
 La precisión global no nos indica qué tipo de equivocaciones está cometiendo el algoritmo. La Matriz de Confusión soluciona esto al desglosar las predicciones en cuatro escenarios vitales:
 * **True Positives (TP):** Clientes que el modelo identificó correctamente en estado de fuga. (El acierto principal).
-* **Falses Negatives (FN):** Clientes que realmente abandonaron la marca, pero que el modelo clasificó como "Activos". Para una empresa, este es el peor escenario, ya que no se emite ninguna alerta y se pierde la oportunidad de retenerlos.
-* **Falses Positives (FP):** Clientes leales que el modelo etiquetó en riesgo por error. (El costo aquí es menor;por lo tanto, se les enviaría una promoción innecesaria).
+* **False Negatives (FN):** Clientes que realmente abandonaron la marca, pero que el modelo clasificó como "Activos". Para una empresa, este es el peor escenario, ya que no se emite ninguna alerta y se pierde la oportunidad de retenerlos.
+* **False Positives (FP):** Clientes leales que el modelo etiquetó en riesgo por error. (El costo aquí es menor; por lo tanto, se les enviaría una promoción innecesaria).
 * **True Negatives (TN):** Clientes activos identificados correctamente.
 
-**¿Por qué se utilizó el reporte de clasifiación?**
+**¿Por qué se utilizó el reporte de Clasificación?**
 Para cuantificar lo que observamos en la Matriz de Confusión, este reporte nos entrega tres métricas estadísticas clave que traducen los aciertos y errores en indicadores reales de rendimiento:
 * **Recall:** De todos los clientes que realmente abandonaron, ¿qué porcentaje logró detectar nuestro modelo? Es decir, mide cuantos **TP** fueron detectados por el modelo.
 * **Precisión (Precision):** De todos los clientes que el modelo etiquetó como "en riesgo de fuga", ¿cuántos realmente se fueron? 
@@ -423,7 +423,7 @@ print(reporte_lr)
 
 <div class="text-justify" markdown="1">
 
-Una precisión global de 71% establecia un buen punto de partida, el **Recall de 0.52** para la clase de Fuga (1) presentaba un área de oportunidad crítica. Este valor indicaba que el modelo solo lograba detectar al 52% de los clientes que realmente abandonaban la marca, dejando que casi la mitad de los desertores pasaran desapercibidos. El objetivo de esta nueva iteración fue someter los datos a una fase de ingeniería de características (Feature Engineering) más profunda para elevar esta métrica predictiva.
+Una precisión global de 71% establecía un buen punto de partida, el **Recall de 0.52** para la clase de Fuga (1) presentaba un área de oportunidad crítica. Este valor indicaba que el modelo solo lograba detectar al 52% de los clientes que realmente abandonaban la marca, dejando que casi la mitad de los desertores pasaran desapercibidos. El objetivo de esta nueva iteración fue someter los datos a una fase de ingeniería de características (Feature Engineering) más profunda para elevar esta métrica predictiva.
 
 ### Hipótesis: Introducción del Ticket Promedio
 
@@ -437,7 +437,7 @@ Se integró esta nueva característica al conjunto predictivo, se procedió a re
 # calcularemos el ticket promedio en los datos originales 
 rfm_df['Ticket_Promedio'] = rfm_df['Monetary'] / rfm_df['Frequency']
 
-# Lo aplicamos en el logarotimo y lo guardamos en nuestro data set 
+# Lo aplicamos en el Logaritmo y lo guardamos en nuestro data set 
 rfm_log['Ticket_Promedio'] = np.log1p(rfm_df['Ticket_Promedio'])
 
 # Redefinimos nuestras variable X
@@ -447,7 +447,7 @@ y_nueva = rfm_log['Churn']
 # Volvemos a dividir los datos para entrenar 
 X_train_n, X_test_n, y_train_n, y_test_n = train_test_split(X_nueva, y_nueva, test_size= 0.2, random_state= 42)
 
-# volvemos a entranar con Logistic Regression debido a que fue el modelo ganador
+# volvemos a entrenar con Logistic Regression debido a que fue el modelo ganador
 modelo_lr.fit(X_train_n, y_train_n)
 predicciones_lr_n = modelo_lr.predict(X_test_n)
 
@@ -456,7 +456,7 @@ print('Reporte de ticket promedio:')
 print(classification_report(y_test_n, predicciones_lr_n))
 ```
 
-Contra las expectativas de optimizar la estdística del modelo, los resultados fueron idénticos. Las métricas, incluyendo el Recall crítico de 0.52, no mostraron absolutamente ninguna variación.
+Contra las expectativas de optimizar la estadística del modelo, los resultados fueron idénticos. Las métricas, incluyendo el Recall crítico de 0.52, no mostraron absolutamente ninguna variación.
 
 | Categoría | Precisión (Precision) | Sensibilidad (Recall) | F1-Score | Soporte (Total de clientes) |
 | :--- | :--- | :--- | :--- | :--- |
@@ -489,7 +489,7 @@ Para solucionar esto, era necesario modificar la sensibilidad del algoritmo. En 
 
 El objetivo de este ciclo fue calcular la Precisión y el Recall para cada umbral de probabilidad entre el 10% y el 90% (0.1 a 0.9). Esto nos permitió visualizar el trade-off (compromiso) entre retener a la mayor cantidad de clientes posibles y no desperdiciar presupuesto en demasiados falsos positivos.
 
-El ciclo for se ejecuto de la siguiente manera: 
+El ciclo for se ejecutó de la siguiente manera: 
 
 ```python
 from sklearn.metrics import recall_score, precision_score
